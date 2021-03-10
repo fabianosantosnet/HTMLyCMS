@@ -1,0 +1,314 @@
+<!doctype html>
+
+<html lang="pt">
+<head>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>HTMLy CMS em Língua Portuguesa | Estrutura</title>
+
+  <meta name="description" content="Estrutura referente ao HTMLy CMS para lusófonos">
+  <meta name="author" content="Fabiano Santos - @fabianosantosnet">
+  
+  <meta property="og:locale" content="pt, pt_BR, pt_PT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Estrutura do HTMLy CMS em Língua Portuguesa">
+  <meta property="og:site_name" content="HTMLyCMS">
+  <meta property="og:description" content="Estrutura do HTMLy CMS para lusófonos">
+  <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">
+  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">  
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@fabianosantos_n">    
+  <meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-tw.png">
+
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">	  
+  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">  
+  <link rel="stylesheet" href="assets/styles.css">  
+
+  <script src="assets/scripts.js" defer></script>
+
+  </head>
+  <body>
+<div class="parent">
+	<div class="top">
+	      <header>
+		 	 <h1><a href="https://fabianosantosnet.github.io/HTMLyCMS/">HTMLy CMS</a></h1>
+			 <p>Sua fonte de referencia sobre o CMS no idioma português</p>
+			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>			  
+		  </header>
+	</div>
+
+	<div class="menu">
+		<ul>
+			<li><a href="./index.html" class="active"><i class="fa fa-home"></i>Principal</a></li>
+			<li><a href="./historico.html"><i class="fa fa-link"></i>Histórico</a></li>
+			<li><a href="./instalacao.html"><i class="fa fa-link"></i>Instalação</a></li>
+			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
+			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+		</ul>	
+
+		<form id="oflinks"><!-- dinamic links --></form>				
+	</div>
+
+	<main>
+
+	   <h2>HTMLy CMS em Língua Portuguesa | Estrutura</h2>
+		
+		<section class="f">			
+			<h3>Organização do HTMLy CMS</h3>
+			
+			<p>Basicamente as tecnologias utilizadas no CMS são: arquivos JSON e PHP e texto com MarkDown (MD).</p>
+			
+			<div class="decor"></div>
+			
+			<h4>Fluxo de carregamento do sistema</h4>
+<code class="minilight">/config/config.ini
+/system/vendor/autoload.php
+/system/htmly.php
+</code><br>
+
+<h4>Estrutura dos diretórios</h4>			
+			<code class="minilight">
+/				&lt;-- Diretório raiz. Arquivos PHP de inicialização do sistema.
+index.php
+install.php
+upload.php
+...
+				
+/backup				&lt;-- Contém os backups com formato htmly_datadecriacao.zip
+				
+/cache				&lt;-- Contém informações do cache
+  downloadInfo.json
+  installedVersion.json
+				
+  /index
+    index-author.txt
+    index-category.txt				
+    index-page.txt
+    index-sorted.txt
+    index-sub-page.txt
+    index-unsorted.txt
+				
+  /page			
+				
+  /widget
+    category.list.cache
+				
+/config				&lt;-- Apresenta as configurações
+  config.ini.example		&lt;-- Modelo de configuração geral do site (titulo do blog, tema, idioma e mais)
+				    O arquivo do site é criado pelo "install.php", caso necessário use o método crie manual
+				
+  /users			&lt;-- Contém os usuarios utilizados para administrar o CMS
+    username.ini.example  	&lt;-- Arquivo padrão para criação de usuarios
+				    copie e renomeie para "nomedousuario.ini" - exemplo jose.ini para o usuário jose
+				    depois altere a senha na linha 'password = yourpassword'
+				    para permissão de acesso também há a linha 'role = admin'
+				
+/content			&lt;-- Apresenta todo conteúdo do site
+  /data				&lt;-- Contem arquivo de configuração
+    configList.json 		&lt;-- Chaves do arquivo de configuração
+    menu.json 			&lt;-- Inclui os dados gerados através do Editor de menu
+    views.json 			&lt;-- Lista dos nomes das postagens
+    tags.lang 			&lt;-- Tags 
+				
+    /category			&lt;-- Guarda as informações das categorias
+      nome-categoria.md				
+      ...
+				
+  /images			&lt;-- Contém as imagens carregadas através do Editor				
+				
+  /usuario			&lt;-- Nome do usuario (autor)
+    /blog			&lt;-- Tipo de site
+      /categoria-nome		&lt;-- pasta com o nome categoria criada (podendo ter varias)
+				
+        /post			&lt;-- pasta do tipo de conteúdo (nesse caso Postagem padrão)
+          xxxx.md		&lt;-- Arquivo na extensão .md (MarkDown) com o formato
+          			    yyyy-mm-dd-hh-mm-ss_nometag1,nometag2_nome-artigo.md (isto é ano-mes-dia-hora-minuto-segundo_nomet***.md)
+				
+        /audio			&lt;--pasta do tipo de conteúdo (nesse caso Postagem com audio)
+        /image			&lt;--pasta de artigos com tipo Postagem com imagem
+        /link			&lt;--pasta de artigos com tipo Postagem de link
+        /quote			&lt;--pasta de artigos com tipo Postagem com citação
+        /video			&lt;--pasta de artigos com tipo Postagem com video
+				
+        /draft			&lt;--pasta com postagem em rascunho
+				
+  /static			&lt;-- Pasta com páginas estáticas (formato nomedapagina.md)				
+    sobre.md			&lt;-- Exemplo de pagina estática
+    contato.md			&lt;-- Exemplo de pagina estática
+	
+    nome-pagina-pai.md		&lt;-- Página estática com página filha (tanto o arquivo quanto a pasta tem o mesmo nome)
+   /nome-pagina-pai
+      nomepaginafilha.md			
+				
+				
+/lang				&lt;-- Apresenta arquivos .ini de idioma a nível de CMS
+  en_US.ini			&lt;-- Para o idioma inglês
+  pt_BR.ini			&lt;-- Para o idioma português
+  ...
+				
+/system				&lt;-- Contém arquivos do funcionamento do CMS
+  htmly.php		  	&lt;-- Arquivo contendo diversas funções de rotas (controller)  
+				
+  /admin		  	&lt;-- Incluir tema e funções do painel de administração
+    admin.php
+    /editor
+      LICENSE.txt
+      package.json
+				
+      /css
+        editor.css
+
+      /img
+        wmd-buttons.png
+				
+      /js
+        editor.js
+        jquery.ajaxfileupload.js
+        Markdown.Converter.js
+        Markdown.Editor.js
+        Markdown.Extra.js
+        Markdown.Sanitizer.js
+        node-pagedown-extra.js
+        node-pagedown.js
+				
+        /local
+          Markdown.local.fr.js				
+				
+    /views
+      404.html.php
+      add-content.html.php
+      add-page.html.php
+      backup.html.php
+      backup-start.html.php
+      categories.html.php
+      category-list.html.php
+      clear-cache.html.php
+      config-custom.html.php
+      config.html.php
+      config-metatags.html.php
+      config-performance.html.php
+      config-reading.html.php
+      config-widget.html.php
+      content-type.html.php
+      delete-category.html.php
+      delete-page.html.php
+      delete-post.html.php
+      denied.html.php
+      edit-content.html.php
+      edit-page.html.php
+      import.html.php
+      layout.html.php
+      login.html.php
+      logout.html.php
+      main.html.php
+      menu.html.php
+      no-posts.html.php
+      popular-posts.html.php
+      posts-list.html.php
+      static-pages.html.php
+      updated-to.html.php
+      update.html.php
+      user-draft.html.php
+      user-posts.html.php
+				
+  /includes		  	&lt;-- Diversos arquivos essenciais
+    dispatch.php
+    functions.php
+    opml.php
+    session.php
+
+  /plugins		  	&lt;-- Pasta destinadas aos plugins do sistema
+				
+  /resources		  	&lt;-- São recursos simples do CMS
+    readme.txt
+    /css
+      adminlte.min.css
+      font-awesome.css
+      jquery-ui.css
+      toolbar.css
+    
+    /fonts
+      FontAwesome.otf
+      fontawesome-webfont.eot
+      fontawesome-webfont.svg
+      fontawesome-webfont.ttf
+      fontawesome-webfont.woff
+      fontawesome-webfont.woff2
+      glyphicons-halflings-regular.eot
+      glyphicons-halflings-regular.svg
+      glyphicons-halflings-regular.ttf
+      glyphicons-halflings-regular.woff
+				
+    /images
+      logo-small.png
+      logo-big.png
+				
+      /jquery-ui
+        ui-icons_444444_256x240.png
+        ui-icons_555555_256x240.png
+        ui-icons_777620_256x240.png
+        ui-icons_777777_256x240.png
+        ui-icons_cc0000_256x240.png
+        ui-icons_ffffff_256x240.png
+				
+    /js
+      adminlte.min.js
+      bootstrap.min.js
+      jquery.min.js
+      jquery.nestable++.js
+      jquery.nestable.js
+      jquery-ui.min.js
+    
+  /upgrade		  	&lt;-- Arquivos referente a atualização do CMS
+    index.php
+    run.php
+				
+  /vendor		  	&lt;-- Conjunto de recursos criados por terceiros utilizados no CMS
+    autoload.php
+    /composer
+				
+    /ircmaxell
+      /password-compat
+				
+    /jbroadway
+      /urlify
+				
+    /kanti
+      /hub-updater
+				
+    /michelf
+      /php-markdown				
+				
+    /suin
+      /php-rss-writer
+    			
+/themes				&lt;-- Local para colocar as pastas dos temas do site/blog
+			</code>
+			
+		</section>
+				
+	</main>	
+	
+	<div class="bottom">
+	      <footer>
+
+			<p>Projeto mantido por <a href="https://github.com/fabianosantosnet"><i class="fa fa-github"></i>fabianosantosnet</a><br>
+			   <small>Hospedado no GitHub Pages &mdash; Tema criado por <a href="https://www.fabianosantos.net">fabianosantos.net</a></small></p>
+			
+			<p id="contractdev"></p>
+			  
+			<p><small><i class="fa fa-file-text"></i> JavaScript - <i class="fa fa-css3"></i> CSS3 - <i class="fa fa-html5"></i> HTML5 - <i class="fa fa-font-awesome"></i> Fonte Awesome</small></p>
+		  
+	      </footer>
+	</div>
+   </div>
+  </body>
+</html>
