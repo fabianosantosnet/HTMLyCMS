@@ -49,7 +49,7 @@
 			<li><a href="./historico.html"><i class="fa fa-link"></i>Histórico</a></li>
 			<li><a href="./instalacao.html"><i class="fa fa-link"></i>Instalação</a></li>
 			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
-			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
 			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
 			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
 		</ul>	
@@ -61,18 +61,18 @@
 
 	   <h2>HTMLy CMS em Língua Portuguesa | Instalação</h2>
 		
-		<section>			
-			<h3>Instalação do HTMLy</h3>
+		<section class="f">			
+			<h3><i class="fa fa-server"></i> Instalação do HTMLy</h3>
 
-			<h4>Requisitos</h4>
+			<h4><i class="fa fa-windows"></i> <i class="fa fa-linux"></i> Requisitos</h4>
 
 			<p>De acordo com a <a href="https://docs.htmly.com/basics/requirements">documentação oficial</a> o CMS funciona em qualquer servidor web com PHP 5.5 (ou superior) configurado, precisando também dos pacotes PHP-XML e PHP-ZIP. Porém considerando questões de segurança e velocidade recomenda-se o PHP 7 em diante. Não é necessário banco de dados !</p>
 
 			<p>PHP no Ubuntu: <a href="https://terminalroot.com.br/2020/12/como-instalar-o-php-8-no-ubuntu-2004.html">Como Instalar o PHP 8 no Ubuntu 20.04</a>  / <a href="https://siteesite.com.br/kb/como-instalar-e-configurar-o-php-7-2-no-ubuntu-18-04/">Como instalar e configurar o PHP 7.2 no Ubuntu 18.04</a></p>
 			
-			<p>Para Windows, você pode utilizar pacotes prontos como o <a href="https://wnmp.x64architecture.com/">WNMP (com servidor NGINX)</a> ou <a href="https://www.vswamp.com/">VertrigoServ (com Apache)</a>.</p>
+			<p>Para Windows, você pode utilizar pacotes prontos como o <a href="https://wnmp.x64architecture.com/">WNMP (com servidor NGINX)</a> ou <a href="https://www.vswamp.com/">VertrigoServ (com Apache)</a>.</p><br>
 			
-			<h4>Instalação manual</h4>
+			<h4><i class="fa fa-download"></i> Instalação padrão</h4>
 
 			<p>Siga os passos:</p>
 			<ol>
@@ -81,13 +81,20 @@
 				<li>Caso tenha extraído no domínio principal visite <code>https://www.seuSite.com.br/install.php</code> e se estiver no subdiretório, visite <code>https://www.seuSite.com.br/htmly/install.php</code>;</li>
 				<li>Preencha os campos do formulário do instalador;</li>
 				<li>O instalador tentará se excluir. Exclua o instalador manualmente se o <code>install.php</code> ainda existir. </li>
-			</ol>
+			</ol><br>
 
-			<h4>Instalação via Softaculous</h4>
-			<p>Efetue <a href="https://ajuda.minas.com.br/hospedagem-de-sites/cpanel/softaculous/instalar-o-htmly-softaculous/">instalação do HTMLy CMS passo a passo via Softaculous</a> no CPanel.</p>
+			<h4><i class="fa fa-download"></i> Instalação manual</h4>
+			<p>Esse são os passos caso não queira utilizar o arquivo <em>install.php</em>.</p>
+			<p>Descompacte o arquivo zipado no diretório root de seu webserver.</p>
+			<p>Execute as permissões de escrita nas pastas <em>cache</em> e <em>content</em>.</p>
+			<p>Renomeie o arquivo <em>config/config.ini.example</em> para <em>config/config.ini</em>. Em seguida, abra o arquivo e altere a linha <code class="p">site.url = "<span>COLOQUE SUA URL COMPLETA AQUI</span>"</code>. As outras configurações você poderá alterar após logar no painel de controle em <em>https://seuSite.com.br/login</em> onde '/login' refere-se a URL do painel de administração.</p>
+			<p>Criei o usuário para acessar o ambiente: altere o <code class="p">config/users/<span>username.ini.example</span></code> para <code class="p">config/users/<span>nomedeusuario.ini</span></code>, onde <em>nomedeusuario</em> é o usuário escolhido, por exemplo, para o usuário joao, crie <em>joao.ini</em>, depois abra o arquivo, e na linha <code class="p">password = <span>yourpassword</span></code> altere '<strong>yourpassword</strong>' pela senha desejada. Por padrão, o usuário está com a permissão de administrador: <code class="p">role = <span>admin</span></code>. O sistema permite a criação de mais de um usuário.</p><br>
+			
+			<h4><i class="fa fa-cloud"></i> Instalação via Softaculous</h4>
+			<p>Efetue <a href="https://ajuda.minas.com.br/hospedagem-de-sites/cpanel/softaculous/instalar-o-htmly-softaculous/">instalação do HTMLy CMS passo a passo via Softaculous</a> no CPanel.</p><br>
 	
-			<h4>Configuração básica no WebServer</h4>
-			<p><a href="https://docs.htmly.com/web-servers/nginx">NGIX</a> / <a href="https://docs.htmly.com/web-servers/apache">Apache Virtual Host</a> / <a href="https://docs.htmly.com/web-servers/lighttpd">Lighttpd</a></p>
+			<h4><i class="fa fa-wrench"></i> Configuração básica no WebServer</h4>
+			<p><a href="https://docs.htmly.com/web-servers/nginx">NGIX</a> / <a href="https://docs.htmly.com/web-servers/apache">Apache Virtual Host</a> / <a href="https://docs.htmly.com/web-servers/lighttpd">Lighttpd</a></p><br>
 
 		</section>
 				

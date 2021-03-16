@@ -1,0 +1,166 @@
+<!doctype html>
+
+<html lang="pt">
+<head>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>HTMLy CMS em Língua Portuguesa | Dicas &amp; Outros</title>
+
+  <meta name="description" content="Dicas e outros sobre o HTMLy CMS para lusófonos">
+  <meta name="author" content="Fabiano Santos - @fabianosantosnet">
+  
+  <meta property="og:locale" content="pt, pt_BR, pt_PT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dicas e outros sobre o HTMLy CMS em Língua Portuguesa">
+  <meta property="og:site_name" content="HTMLyCMS">
+  <meta property="og:description" content="Dicas e outros sobre o HTMLy CMS para lusófonos">
+  <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">
+  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">  
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@fabianosantos_n">    
+  <meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-tw.png">
+
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">	  
+  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">  
+  <link rel="stylesheet" href="assets/styles.css">  
+
+  <script src="assets/scripts.js" defer></script>
+
+  </head>
+  <body>
+<div class="parent">
+	<div class="top">
+	      <header>
+		 	 <h1><a href="https://fabianosantosnet.github.io/HTMLyCMS/">HTMLy CMS</a></h1>
+			 <p>Sua fonte de referencia sobre o CMS no idioma português</p>
+			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>			  
+		  </header>
+	</div>
+
+	<div class="menu">
+		<ul>
+			<li><a href="./index.html" class="active"><i class="fa fa-home"></i>Principal</a></li>
+			<li><a href="./historico.html"><i class="fa fa-link"></i>Histórico</a></li>
+			<li><a href="./instalacao.html"><i class="fa fa-link"></i>Instalação</a></li>
+			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
+			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
+			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
+		</ul>	
+
+		<form id="oflinks"><!-- dinamic links --></form>				
+	</div>
+
+	<main>
+
+	   <h2>HTMLy CMS em Língua Portuguesa | Dicas & Outros</h2>
+		
+		<section class="f">			
+			<h3><i class="fa fa-info-circle"></i> Informações diversas</h3>
+			
+			<h4><i class="fa fa-shield"></i> Troca de senha e seguraça</h4>
+			
+			<p>Senhas são colocadas no arquivo <code class="p">config/users/<span>username</span>.ini</code> (onde "username" é o nome do usuário) em texto simples, algoritmos de criptografia suportados por php hash ou bcrypt (recomendado). Para gerar uma senha criptografada bcrypt:</p>
+			<p><code class="p">$ php -a
+> echo password_hash('senhaNova', PASSWORD_BCRYPT);</code></p>
+			
+			<p>Isso produzirá um hash que deve ser colocada no campo de password em username.ini. Certifique-se de que o campo de criptografia esteja definido como password_hash.</p>
+			
+			<p>Caso queira apenas trocar a senha, altere a linha <code class="c">password = <span>yourpassword</span></code> - em 'yourpassword' pela senha desejada.</p>
+			
+			<h4><i class="fa fa-pencil"></i> Edição de arquivos manualmente</h4>
+			<p>Conheça a estrutura dos arquivos:</p>
+			<p><code class="c">/username/blog/category/<span>type</span>/</code> - ao qual o <em>type</em> pode ser: post, video, audio, link e quote.</p>
+			<ul>
+				<li><b>username</b> deve ser o mesmo de <code class="p">config/users/<span>username</span>.ini</code></li>
+				<li><b>category</b> deve corresponder a category.md dentro de <code class="p">content/data/category/<span>category.md</span></code> exceto a categoria uncategorized (não categorizada - não precisa estar nessa pasta)</li>
+			</ul>
+
+			<p>Para páginas estáticas envie os arquivos para <code class="p">/content/static</code>:</p>
+			<ul>
+				<li>ao criar a página 'sobre' <code class="c">/content/static/<span>sobre.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre</strong></code></li>
+				<li>para sub-páginas <code class="c">/content/static/sobre/<span>equipe.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre/equipe</strong></code></li>
+			</ul>
+				
+			<h5><i class="fa fa-file-o"></i> Nome de arquivo</h5>
+			<p>Quando você cria um post pelo painel de controle é criado um arquivo com o padrão:</p>
+			<p><code class="p"><span>2021-03-16-10-32-40_tag1,tag2,tag3_nome-do-artigo.md</span></code></p>
+			
+			<p>Explicação (separada pelo sublinhado):</p>
+			<ul>
+				<li><code class="p">2021-03-16</code> é a data da criação da postagem no formato <code class="c">yyyy-mm-dd-hh-mm-ss</code>;</li>
+				<li><code class="p">tag1,tag2,tag3</code> são as tags relacionadas ao artigo/post separadas por vigula quando há mais de uma;</li>
+				<li><code class="p">nome-do-artigo</code> representa a URL.</li>
+			</ul>
+			
+			<h5><i class="fa fa-file-o"></i> Meta tags de conteúdo</h5>
+			<p>Para edição de arquivo manual você precisa criar as tags:</p>
+			
+			<p>Defina o título entre os 't'<br><code class="p"><span>&lt;!--t</span> Título <span>t--&gt;</span></code></p>
+			<p>Coloque a descrição entre os 'd'<br><code class="p"><span>&lt;!--d</span> Descrição <span>d--&gt;</span></code></p>
+			<p>Escreva o nome das tags relacionadas entre 'tag' de início e fim<br><code class="p"><span>&lt;!--tag</span> tag01,tag02,tag03,tag04,tag05 <span>tag--&gt;</span></code></p>
+			
+			<p>Postagem com imagem em destaque entre os 'image'<br><code class="p"><span>&lt;!--image</span> http://www.example.com/image-url/image.jpg <span>image--&gt;</span></code></p>			
+			<p>Postagem de vídeo do Youtube em destaque entre os 'video'<br><code class="p"><span>&lt;!--video</span> ´https://www.youtube.com/watch?v=xxxxxxx <span>video--&gt;</span></code></p>			
+			<p>Postagem com áudio do SoundCloud em destaque entre os 'audio'<br><code class="p"><span>&lt;!--audio</span> ´https://soundcloud.com/xxxx/audio-url <span>audio--&gt;</span></code></p>			
+			<p>Postagem de link em destaque entre os 'link'<br><code class="p"><span>&lt;!--link</span> https://linkdoartigodestacado.com.br <span>link--&gt;</span></code></p>			
+			<p>Postagem de citação em destaque entre os 'quote'<br><code class="p"><span>&lt;!--quote</span> A citação é uma marca do dialogismo linguístico, feita para sustentar uma hipótese ...(Wikipedia) <span>quote--&gt;</span></code></p>
+			
+			<p>Exemplo completo: <br><code class="p"><!--t Título do artigo t-->
+&lt;!--d Descrição do artigo (resumo) d--&gt;
+&lt;!--tag Tag1,Tag2 tag--&gt;
+&lt;!--video https://www.youtube.com/watch?v=xxxxxxx video--&gt;
+
+Introducao do artigo
+Desenvolvimento
+Conclusao.
+				
+</code></p>
+			<h5><i class="fa fa-file-o"></i> Categoria</h5>			
+			<p>Crie uma categoria, por exemplo, 'Informática' dentro de <code class="p">content/data/category/<span>informatica.md</span></code> com o conteúdo:</p>
+			<p><code class="p">&lt;!--t Informatica t--&gt;
+&lt;!--d Descrição dessa categoria d--&gt;
+
+Informação dessa categoria.</code></p>
+			
+			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem, veja as demais em  <a href="./estrutura.html">detalhes da estrutura</a>.</p>
+			<!-- 
+<p></p>
+<code class="p"></code>
+<code class="p"><span></span></code>
+
+<code class="c"></code>
+<code class="c"><span></span></code>
+
+<code></code>
+<h4></h4>
+			<p></p>
+<p>Basicamente as tecnologias utilizadas no CMS são: arquivos JSON e PHP e texto com MarkDown (MD).</p>
+			
+			 -->
+			
+		</section>
+				
+	</main>	
+	
+	<div class="bottom">
+	      <footer>
+
+			<p>Projeto mantido por <a href="https://github.com/fabianosantosnet"><i class="fa fa-github"></i>fabianosantosnet</a><br>
+			   <small>Hospedado no GitHub Pages &mdash; Tema criado por <a href="https://www.fabianosantos.net">fabianosantos.net</a></small></p>
+			
+			<p id="contractdev"></p>
+			  
+			<p><small><i class="fa fa-file-text"></i> JavaScript - <i class="fa fa-css3"></i> CSS3 - <i class="fa fa-html5"></i> HTML5 - <i class="fa fa-font-awesome"></i> Fonte Awesome</small></p>
+		  
+	      </footer>
+	</div>
+   </div>
+  </body>
+</html>
