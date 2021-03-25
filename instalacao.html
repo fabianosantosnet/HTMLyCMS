@@ -11,24 +11,24 @@
 
   <meta name="description" content="Instalação referente ao HTMLy CMS para lusófonos">
   <meta name="author" content="Fabiano Santos - @fabianosantosnet">
-  
+
   <meta property="og:locale" content="pt, pt_BR, pt_PT">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Instalação do HTMLy CMS em Língua Portuguesa">
   <meta property="og:site_name" content="HTMLyCMS">
   <meta property="og:description" content="Instalação do HTMLy CMS para lusófonos">
   <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/instalacao.html">
-  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">  
+  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">  
+  <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@fabianosantos_n">    
+  <meta name="twitter:creator" content="@fabianosantos_n">
   <meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-tw.png">
 
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">	  
-  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/instalacao.html">  
-  <link rel="stylesheet" href="assets/styles.css">  
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/instalacao.html">
+  <link rel="stylesheet" href="assets/styles.css">
 
   <script src="assets/scripts.js" defer></script>
 
@@ -39,7 +39,7 @@
 	      <header>
 		 	 <h1><a href="https://fabianosantosnet.github.io/HTMLyCMS/">HTMLy CMS</a></h1>
 			 <p>Sua fonte de referencia sobre o CMS no idioma português</p>
-			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>			  
+			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>
 		  </header>
 	</div>
 
@@ -51,17 +51,17 @@
 			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
 			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
 			<li><a href="./temas.html"><i class="fa fa-link"></i>Temas</a></li>
-			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
-		</ul>	
+			<li><a href="./extensoes.html"><i class="fa fa-link"></i>Extensões</a></li>
+		</ul>
 
-		<form id="oflinks"><!-- dinamic links --></form>				
+		<form id="oflinks"><!-- dinamic links --></form>
 	</div>
 
 	<main>
 
 	   <h2>HTMLy CMS em Língua Portuguesa | Instalação</h2>
-		
-		<section class="f">			
+
+		<section class="f">
 			<h3><i class="fa fa-server"></i> Instalação do HTMLy</h3>
 
 			<h4><i class="fa fa-windows"></i> <i class="fa fa-linux"></i> Requisitos</h4>
@@ -69,9 +69,19 @@
 			<p>De acordo com a <a href="https://docs.htmly.com/basics/requirements">documentação oficial</a> o CMS funciona em qualquer servidor web com PHP 5.5 (ou superior) configurado, precisando também dos pacotes PHP-XML e PHP-ZIP. Porém considerando questões de segurança e velocidade recomenda-se o PHP 7 em diante. Não é necessário banco de dados !</p>
 
 			<p>PHP no Ubuntu: <a href="https://terminalroot.com.br/2020/12/como-instalar-o-php-8-no-ubuntu-2004.html">Como Instalar o PHP 8 no Ubuntu 20.04</a>  / <a href="https://siteesite.com.br/kb/como-instalar-e-configurar-o-php-7-2-no-ubuntu-18-04/">Como instalar e configurar o PHP 7.2 no Ubuntu 18.04</a></p>
-			
+
 			<p>Para Windows, você pode utilizar pacotes prontos como o <a href="https://wnmp.x64architecture.com/">WNMP (com servidor NGINX)</a> ou <a href="https://www.vswamp.com/">VertrigoServ (com Apache)</a>.</p><br>
-			
+
+			<h4><i class="fa fa-download"></i> Instalação Online</h4>
+			<p>Instale o HTMLy sem baixar o código-fonte:</p>
+			<ol>
+				<li>Baixe o arquivo <code class="d">online-installer.php</code> da última versão do <a href="https://github.com/danpros/htmly/releases">repositório Github</a>;</li>
+				<li>Faça upload no diretório público de seu servidor web. Você pode carregá-lo no diretório raiz ou em um subdiretório como htmly;</li>
+				<li>Caso tenha extraído no domínio principal visite <code class="d">https://www.seuSite.com.br/online-installer.php</code> e se estiver no subdiretório, visite <code class="d">https://www.seuSite.com.br/htmly/online-installer.php</code>;</li>
+				<li>Siga os passos e instale o CMS;</li>
+				<li>Exclua os arquivos de instalação <code class="d">install.php</code> e <code class="d">online-installer.php</code> caso ainda existam no diretório.</li>
+			</ol><br>
+
 			<h4><i class="fa fa-download"></i> Instalação padrão</h4>
 
 			<p>Siga os passos:</p>
@@ -89,27 +99,27 @@
 			<p>Execute as permissões de escrita nas pastas <em>cache</em> e <em>content</em>.</p>
 			<p>Renomeie o arquivo <code class="p">config/<span>config.ini.example</span></code> para <code class="p">config/<span>config.ini</span></code>. Em seguida, abra o arquivo e altere a linha <code class="p">site.url = "<span>COLOQUE SUA URL COMPLETA AQUI</span>"</code>. As outras configurações você poderá alterar após logar no painel de controle em <em>https://seuSite.com.br/login</em> onde '/login' refere-se a URL do painel de administração.</p>
 			<p>Criei o usuário para acessar o ambiente: altere o <code class="p">config/users/<span>username.ini.example</span></code> para <code class="p">config/users/<span>nomedeusuario.ini</span></code>, onde <em>nomedeusuario</em> é o usuário escolhido, por exemplo, para o usuário joao, crie <em>joao.ini</em>, depois abra o arquivo, e na linha <code class="p">password = <span>yourpassword</span></code> altere '<strong>yourpassword</strong>' pela senha desejada. Por padrão, o usuário está com a permissão de administrador: <code class="p">role = <span>admin</span></code>. O sistema permite a criação de mais de um usuário.</p><br>
-			
+
 			<h4><i class="fa fa-cloud"></i> Instalação via Softaculous</h4>
 			<p>Efetue <a href="https://ajuda.minas.com.br/hospedagem-de-sites/cpanel/softaculous/instalar-o-htmly-softaculous/">instalação do HTMLy CMS passo a passo via Softaculous</a> no CPanel.</p><br>
-	
+
 			<h4><i class="fa fa-wrench"></i> Configuração básica no WebServer</h4>
 			<p><a href="https://docs.htmly.com/web-servers/nginx">NGIX</a> / <a href="https://docs.htmly.com/web-servers/apache">Apache Virtual Host</a> / <a href="https://docs.htmly.com/web-servers/lighttpd">Lighttpd</a></p><br>
 
 		</section>
-				
-	</main>	
-	
+
+	</main>
+
 	<div class="bottom">
 	      <footer>
 
 			<p>Projeto mantido por <a href="https://github.com/fabianosantosnet"><i class="fa fa-github"></i>fabianosantosnet</a><br>
 			   <small>Hospedado no GitHub Pages &mdash; Tema criado por <a href="https://www.fabianosantos.net">fabianosantos.net</a></small></p>
-			
+
 			<p id="contractdev"></p>
-			  
+
 			<p><small><i class="fa fa-file-text"></i> JavaScript - <i class="fa fa-css3"></i> CSS3 - <i class="fa fa-html5"></i> HTML5 - <i class="fa fa-font-awesome"></i> Fonte Awesome</small></p>
-		  
+
 	      </footer>
 	</div>
    </div>

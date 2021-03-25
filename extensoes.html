@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang="pt">
+<head>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>HTMLy CMS em Língua Portuguesa | Extensões</title>
+
+  <meta name="description" content="Extensões do HTMLy CMS para lusófonos">
+  <meta name="author" content="Fabiano Santos - @fabianosantosnet">
+
+  <meta property="og:locale" content="pt, pt_BR, pt_PT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Extensões do HTMLy CMS em Língua Portuguesa">
+  <meta property="og:site_name" content="HTMLyCMS">
+  <meta property="og:description" content="Extensões do HTMLy CMS para lusófonos">
+  <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/extensoes.html">
+  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@fabianosantos_n">
+  <meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-tw.png">
+
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/extensoes.html">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <script src="assets/scripts.js" defer></script>
+
+  </head>
+  <body>
+<div class="parent">
+	<div class="top">
+	      <header>
+		 	 <h1><a href="https://fabianosantosnet.github.io/HTMLyCMS/">HTMLy CMS</a></h1>
+			 <p>Sua fonte de referencia sobre o CMS no idioma português</p>
+			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>
+		  </header>
+	</div>
+
+	<div class="menu">
+		<ul>
+			<li><a href="./index.html" class="active"><i class="fa fa-home"></i>Principal</a></li>
+			<li><a href="./historico.html"><i class="fa fa-link"></i>Histórico</a></li>
+			<li><a href="./instalacao.html"><i class="fa fa-link"></i>Instalação</a></li>
+			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
+			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
+			<li><a href="./temas.html"><i class="fa fa-link"></i>Temas</a></li>
+			<li><a href="./extensoes.html"><i class="fa fa-link"></i>Extensões</a></li>
+		</ul>
+
+		<form id="oflinks"><!-- dinamic links --></form>
+	</div>
+
+	<main>
+
+	   <h2>HTMLy CMS em Língua Portuguesa | Extensões</h2>
+
+		<section class="f">
+			
+			<h3><i class="fa fa-puzzle-piece"></i> Amplie as funcionalidades do CMS</h3>
+
+			<h4>Funções de widgets embutidas no HTMLy</h4>
+			
+			<p>No momento o CMS não tem um gerenciador de plugins (widgets) em seu painel de controle, nesse caso a remoção e inserção de funções é manual direto no tema. No HTMLy você encontra os principais recursos da maioria das plataformas de blog. </p>
+			
+			  <ul class="widgetb">
+				<li><code>search($text = null)</code> - função de busca (opcional: informe um nome para o botão)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ao criar um formulário certifique-se de definir os atributos name e type para 'search':<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="p">&#x3C;form&#x3E;&#x3C;input type=&#x22;search&#x22; name=&#x22;search&#x22; class=&#x22;form-control&#x22; placeholder=&#x22;Digite para buscar&#x22;&#x3E;&#x3C;/form&#x3E;</code><br><br></li>
+				  
+				<li><code>menu($custom = null)</code> - imprime o menu (parametro opcional: classe CSS);<br><br></li>
+				  
+				<li><code>recent_posts($custom = null, $count = null)</code> - por padrão, sem especificar os parametros <code>recent_posts()</code>, retorna a lista de posts recentes pelo título;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caso especifique o primeiro parâmetro <code>recent_posts(true)</code> retorna um array;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;você também pode informar o número de resultados <code>recent_posts(true,5)</code>;<br><br></li>
+				  
+				<li><code>popular_posts($custom = null, $count = null)</code> - retorna os posts populares - parâmetros com as mesmas funcionalidades descritas acima;</li>
+				  
+				<li><code>archive_list($custom = null)</code> - mostra a lista de arquivos (padrão false);</li>
+				<li><code>tag_cloud($custom = null)</code> - lista de tags disponíveis (padrão false);<br><br></li>
+				  
+				<li><code>category_list($custom = null)</code> - exibe qualquer categoria que tenha conteúdo;</li>
+				<li><code>get_related($p->related)</code> - mostra postagens relacionadas por tag exibindo apenas o título da postagem com link para a mesma;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e para customizar para que retorne um array, especifique o segundo parâmetro <code>get_related($p->related,true)</code>;<br><br></li>
+				  
+				<li><code>recent_type($type, $custom = null, $count = null)</code> - retorna o postagem recente pelo tipo de conteúdo: video, audio, image (...);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no exemplo a seguir, retorna um array com 5 itens dos posts do tipo imagem <code>recent_type('image', true, 5)</code>;</li>
+			 </ul> <!-- https://docs.htmly.com/theming/4-widget -->
+					
+		</section>
+
+	</main>
+
+	<div class="bottom">
+	      <footer>
+
+			<p>Projeto mantido por <a href="https://github.com/fabianosantosnet"><i class="fa fa-github"></i>fabianosantosnet</a><br>
+			   <small>Hospedado no GitHub Pages &mdash; Tema criado por <a href="https://www.fabianosantos.net">fabianosantos.net</a></small></p>
+
+			<p id="contractdev"></p>
+
+			<p><small><i class="fa fa-file-text"></i> JavaScript - <i class="fa fa-css3"></i> CSS3 - <i class="fa fa-html5"></i> HTML5 - <i class="fa fa-font-awesome"></i> Fonte Awesome</small></p>
+
+	      </footer>
+	</div>
+   </div>
+  </body>
+</html>

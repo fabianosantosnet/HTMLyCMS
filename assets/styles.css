@@ -41,7 +41,7 @@ pre,code *,header p { font-family: 'Cousine', monospace !important; }
 
 .minilight .s {color:blue !important;}
 /* END Code highlight */
-.parent {max-width:1200px;margin:1rem auto}
+.parent {max-width:1200px !important;;margin:1rem auto}
 
 .top {height:200px;background:var(--bglogo) aliceblue;border-radius:5px 5px 0px 0px}
 
@@ -98,6 +98,7 @@ section.f div.decor {border:1px solid #59c;width:100%;margin:2rem 0}
 section.f p {margin-left:1rem}
 code.p {white-space: pre;background-color:azure;display:inline-block;padding:0.3rem;margin:0.1rem 0;}
 code.c {padding:0.3rem;background-color:azure}
+
 code.c span {color:#59c}
 span.info{word-spacing:-0.1rem;font-style:italic}
 p.dif .minilight {margin:0;width:97%}
@@ -110,6 +111,13 @@ p.dif .tit {padding:0.5rem;background-color:azure;color:#59c;display:inline-bloc
 #geral iframe {min-height:420px; float:left;background:#fff;margin:-0.5rem 1rem 0 0}
 #topba {background:#000;border-top:1rem solid #444;border-bottom:1rem solid #444;text-align:center}
 ul li ul li {margin:1rem 0}
+.widgetb {list-style:none;padding:0 1rem}
+.widgetb li::before {
+    content: "\BB";
+    font-family: "FontAwesome";
+    padding: 0 10px 0 0;
+    color:#59c
+}
 
 .feature-block {}
 .feature-block h3 {}

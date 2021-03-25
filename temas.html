@@ -9,26 +9,26 @@
 
   <title>HTMLy CMS em Língua Portuguesa | Temas</title>
 
-  <meta name="description" content="Temas e modelos o HTMLy CMS para lusófonos">
+  <meta name="description" content="Temas e modelos do HTMLy CMS para lusófonos">
   <meta name="author" content="Fabiano Santos - @fabianosantosnet">
-  
+
   <meta property="og:locale" content="pt, pt_BR, pt_PT">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dicas e outras informações sobre o HTMLy CMS em Língua Portuguesa">
+  <meta property="og:title" content="Temas e modelos do HTMLy CMS em Língua Portuguesa">
   <meta property="og:site_name" content="HTMLyCMS">
-  <meta property="og:description" content="Dicas e outras informações sobre o HTMLy CMS para lusófonos">
-  <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">
-  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">  
+  <meta property="og:description" content="Temas e modelos do HTMLy CMS para lusófonos">
+  <meta property="og:url" content="https://fabianosantosnet.github.io/HTMLyCMS/temas.html">
+  <meta property="og:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-fb.png">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">  
+  <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@fabianosantos_n">    
+  <meta name="twitter:creator" content="@fabianosantos_n">
   <meta name="twitter:image" content="https://fabianosantosnet.github.io/HTMLyCMS/assets/img/logo-htmly-cms-tw.png">
 
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">	  
-  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/estrutura.html">  
-  <link rel="stylesheet" href="assets/styles.css">  
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://fabianosantosnet.github.io/HTMLyCMS/temas.html">
+  <link rel="stylesheet" href="assets/styles.css">
 
   <script src="assets/scripts.js" defer></script>
 
@@ -39,7 +39,7 @@
 	      <header>
 		 	 <h1><a href="https://fabianosantosnet.github.io/HTMLyCMS/">HTMLy CMS</a></h1>
 			 <p>Sua fonte de referencia sobre o CMS no idioma português</p>
-			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>			  
+			<p class="view"><a href="https://github.com/fabianosantosnet/HTMLyCMS/">GitHub deste site</a></p>
 		  </header>
 	</div>
 
@@ -51,36 +51,36 @@
 			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
 			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
 			<li><a href="./temas.html"><i class="fa fa-link"></i>Temas</a></li>
-			<li><a href="./index.html"><i class="fa fa-link"></i>Link</a></li>
-		</ul>	
+			<li><a href="./extensoes.html"><i class="fa fa-link"></i>Extensões</a></li>
+		</ul>
 
-		<form id="oflinks"><!-- dinamic links --></form>				
+		<form id="oflinks"><!-- dinamic links --></form>
 	</div>
 
 	<main>
 
 	   <h2>HTMLy CMS em Língua Portuguesa | Temas</h2>
-		
-		<section class="f">			
+
+		<section class="f">
 			<h3><i class="fa fa-eye"></i> Diversas informações acerca dos temas</h3>
-			
+
 			<h4><i class="fa fa-arrow-right"></i> Disponibilidade de temas</h4>
-			
-			<p>O HTMLy CMS foi concebido com foco em blog, contudo você pode adaptar seu tema para que fique igual a um site pessoal ou empresarial.</p>			
-			<p>Por padrão o pacote de instalação contém os seguintes temas: blog, clean, logs, readable, twentyfifteen e twentysixteen.</p>			
+
+			<p>O HTMLy CMS foi concebido com foco em blog, contudo você pode adaptar seu tema para que fique igual a um site pessoal ou empresarial.</p>
+			<p>Por padrão o pacote de instalação contém os seguintes temas: blog, clean, logs, readable, twentyfifteen e twentysixteen.</p>
 			<p>Os temas que você pode baixar no <a href="https://www.htmly.com/download/themes/">site oficial</a> são: Moth, Independent Publisher, Casper, Clean Blog, Ignite e Vapor.</p>
-			
+
 			<h4><i class="fa fa-arrow-right"></i> Alterando um tema</h4>
 			<p>A partir da versão 2.7.7, o tema pode ser alterado na área de administração na barra lateral <span class="info">Configurações -&gt; Configurar -&gt; Geral -&gt; Tema</span>.</p>
 			<p>Você também pode alterar manualmente no arquivo <code class="p">config/<span>config.ini</span></code> na linha <code class="p">views.root = "themes/<span>NomePastaTema</span>"</code>.
-			
+
 			<h4><i class="fa fa-arrow-right"></i> Estrutura padrão do tema</h4>
 			<p>HTMLy usa o mecanismo de template tradicional: tags HTML misturadas com PHP.</p>
 			<p>Para entender melhor o funcionamento, abra os arquivos dos temas que vem com a instalação do HTMLy e contribua com seu desenvolvimento.</p>
-			
+
 			<p>O CMS implementa um modelo de páginas conforme informação abaixo.</p>
 			<p class="dif"><code class="minilight">themes/nomeDoTema/
-      /css				&lt;- Pasta para colocar os arquivos de estilo 
+      /css				&lt;- Pasta para colocar os arquivos de estilo
       /img				&lt;- Pasta para as imagens
       /js				&lt;- Pasta para os JavaScripts
       404.html.php			&lt;- Base para páginas não encontradas
@@ -92,32 +92,32 @@
       profile.html.php			&lt;- Página padrão do perfil do autor
       static.html.php			&lt;- Padrão para páginas e sub-páginas estáticas
 				</code></p>
-			
+
 				<p>Quando há necessidade de customizar o tema há outros tipos de modelo como a seguir.</p>
-			
+
 <p class="dif"><span class="tit">Frente - Somente para a página inicial</span><code class="minilight">      layout--front.html.php				&lt;- somente layout para primeira página
       static--front.html.php				&lt;- conteúdo principal se usarmos a página inicial estática
       main--front.html.php				&lt;- conteúdo principal se usarmos a página inicial dinâmica
 </code></p>
-			
+
 			<p class="dif"><span class="tit">Blog - para a URL '/blog'</span><code class="minilight">      layout--blog.html.php				&lt;- layout da página blog
       main--blog.html.php				&lt;- conteúdo principal da página blog
-</code></p>	
-			
+</code></p>
+
 			<p class="dif"><span class="tit">Página estática - exemplo de uma página '/sobre'</span><code class="minilight">      layout--static.html.php				&lt;- modelo para todas páginas estáticas
       layout--static--sobre.html.php			&lt;- modelo somente para a página sobre
       static--sobre.html.php				&lt;- modelo para o conteudo principal da página 'sobre'
-</code></p>	
-			
+</code></p>
+
 			<p class="dif"><span class="tit">Sub Página estática - exemplo de uma página '/sobre/empresa'</span><code class="minilight">      layout--static--about.html.php 			&lt;- página pai
       static--sobre.html.php 				&lt;- conteúdo principal da página pai
       layout--static--sobre--empresa.html.php 		&lt;- modelo somente para a página '/sobre/empresa'
-      static--sobre--empresa.html.php 			&lt;- conteúdo principal da página filha</code></p>				
-				
-			
+      static--sobre--empresa.html.php 			&lt;- conteúdo principal da página filha</code></p>
+
+
 			<p class="dif"><span class="tit">Postagem de blog - disponível apenas com estilo baseado na categoria</span><code class="minilight">      layout--post--uncategorized.html.php 		&lt;- layout para postagens com categoria não categorizada
       layout--post.html.php 				&lt;- layout para todas as postagens do blog
-      post--uncategorized.html.php 			&lt;- conteúdo principal para postagem individual com categoria não categorizada</code></p>						
+      post--uncategorized.html.php 			&lt;- conteúdo principal para postagem individual com categoria não categorizada</code></p>
 
 			<p class="dif"><span class="tit">Categoria - O exemplo é uma categoria não categorizada</span><code class="minilight">      layout--category.html.php
       main--category.html.php
@@ -128,31 +128,85 @@
       main--tag.html.php
       layout--tag--github.html.php
       main--tag--github.html.php</code></p>
-				
+
 			<p class="dif"><span class="tit">Arquivados</span><code class="minilight">      layout--archive.html.php
       main--archive.html.php</code></p>
-				
+
 			<p class="dif"><span class="tit">Busca</span><code class="minilight">      layout--search.html.php
       main--search.html.php</code></p>
-				
+
 			<p class="dif"><span class="tit">Tipo - Exemplo com o tipo imagem</span><code class="minilight">      layout--type.html.php
       main--type.html.php
       layout--type--image.html.php
-      main--type--image.html.php</code></p>				
-		</section>
+      main--type--image.html.php</code></p><br>			
+					
+			<h4>Variáveis &amp; Funções de Tema</h4>					
+			<h5>layout.html.php</h5>
+			<p>Contém a estrutura base do HTML.</p>
+			
+			<ul>
+				<li><code>echo head_contents();</code> - imprime as tags e metatags de cabeçalho como RSS, charset, viewport dentre outros;</li>
+				<li><code>echo $title . ' ' . $description .' ' . $canonical;</code> - imprime o título, a descrição e o meta canônico da página;</li>
+				<li><code>site_url()</code> - informa a URL do site;</li>
+				<li><code>facebook()</code> - imprime o script do Facebook, se utilizarmos seu comentário;</li>
+				<li><code>login()</code> - utilizado para verificação se está logado;</li>
+				<li><code>toolbar()</code> - mostra a barra de ferramentas no topo;</li>
+				<li><code>is_index()</code> - checa se a página atual é a inicial;</li>
+				<li><code>blog_title() / blog_tagline() / blog_description()</code> - na sequencia informa imprime o título, o slogan e a descrição do blog;</li>
+				<li><code>content()</code> - imprime o conteúdo principal de outro arquivo modelo como main.html.php ou post.html.php;</li>
+				<li><code>copyright()</code> - informa um aviso de direitos autorais e link de crédito</li>
+				<li><code>analytics()</code> - imprime o Google Analytics.</li>				
+			</ul>
+			
+			<h5>main.html.php</h5>
+			<p>Este arquivo de modelo lida com índice de postagens como na página inicial dinâmica, tags, categorias, arquivo e resultado de pesquisa.</p>
+			
+			<ul>			
+				<li><code>$posts</code> - contém a coleção de resultados das páginas; utilize <code>foreach($posts as $p){...}</code> e retorne	as variáveis 
+				<pre><code class="p">$p->url
+$p->title
+$p->date
+$p->body
+$p->description
+$p->tag
+$p->category
+$p->author
+$p->authorUrl
+$p->related
+$p->views
+$p->type
+$p->file
+$p->image
+$p->video
+$p->audio
+$p->quote
+$p->link
+</code></pre>				
+				</li>
 				
-	</main>	
-	
+				<li><code>get_teaser($p->body, $p->url)</code> - imprime o resumo, se estiver setado nas configurações o teaser.type como 'trimmed', caso contrário imprime todo o artigo; </li>
+				<!-- <li><code></code> - </li>
+				<li><code></code> - </li>
+				<li><code></code> - </li>
+				<li><code></code> - </li>
+				<li><code></code> - </li>
+				<li><code></code> - </li> -->
+			</ul>
+			
+		</section>
+
+	</main>
+
 	<div class="bottom">
 	      <footer>
 
 			<p>Projeto mantido por <a href="https://github.com/fabianosantosnet"><i class="fa fa-github"></i>fabianosantosnet</a><br>
 			   <small>Hospedado no GitHub Pages &mdash; Tema criado por <a href="https://www.fabianosantos.net">fabianosantos.net</a></small></p>
-			
+
 			<p id="contractdev"></p>
-			  
+
 			<p><small><i class="fa fa-file-text"></i> JavaScript - <i class="fa fa-css3"></i> CSS3 - <i class="fa fa-html5"></i> HTML5 - <i class="fa fa-font-awesome"></i> Fonte Awesome</small></p>
-		  
+
 	      </footer>
 	</div>
    </div>
