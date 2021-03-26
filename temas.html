@@ -185,14 +185,52 @@ $p->link
 				</li>
 				
 				<li><code>get_teaser($p->body, $p->url)</code> - imprime o resumo, se estiver setado nas configurações o teaser.type como 'trimmed', caso contrário imprime todo o artigo; </li>
-				<!-- <li><code></code> - </li>
-				<li><code></code> - </li>
-				<li><code></code> - </li>
-				<li><code></code> - </li>
-				<li><code></code> - </li>
-				<li><code></code> - </li> -->
+				<li><code>$category->title / $category->body</code> - título e conteúdo da categoria;</li>
+				<li><code>$tag->title / $archive->title / $search->title</code> - título da tag, título dos arquivados e da busca;</li>
+				<li><code>$breadcrumb</code> - imprime o <span title="sistema de navegação estrutural usada para proporcionar ao usuário um meio de localização dentro da estrutura de navegação do site">breadcrumb</span>;</li>
+				<li><code>$pagination['prev'] / $pagination['next'] / $page / $pagination['pagenum']</code> - variáveis de paginação;</li>				
+				<li><code>$pagination['html']</code> - renderiza a paginação completa;</li>
+				<li><code>disqus_count()</code> - mostra a numeração de comentários do Disqus.</li>
 			</ul>
 			
+			<h5>post.html.php</h5>
+			<p>Na página de postagem única as variáveis disponíveis são as mencionadas abaixo.</p>			
+			
+			<ul>
+				<li>Por exemplo: <code>foreach($posts as $p){...}</code> <pre><code class="p">$p->url
+$p->title
+$p->date
+$p->body
+$p->description
+$p->tag
+$p->category
+$p->author
+$p->authorUrl
+$p->related
+$p->views
+$p->type
+$p->file
+$p->image
+$p->video
+$p->audio
+$p->quote
+$p->link
+</code></pre></li>
+				
+				<li><code>$breadcrumb / disqus($p->title, $p->url) / disqus_count()</code> - para navegação, o comentário disqus e sua contagem;</li>
+				<li><code>$prev / $next</code> - para navegação na postagem;</li>
+				<li><code>$post / $next</code> - as duas coleções contém todas as variável como em <em>$p</em> descrita acima, exemplo: <code class="c">$prev['url'] / $prev['image']</code>;</li>
+				<li><code>get_related($p->related)</code> - referente aos posts relacionados;</li>				
+			</ul>	
+			
+			<h5>static.html.php</h5>
+			<p>Para páginas estáticas as variáveis mais comuns são: <code class="c">$p->title / $p->url / $p->body</code></p>
+
+			<h5>profile.html.php</h5>
+			<p>Para a página de perfil temos: <code class="c">$name / $about / $posts</code>. A variável <code>$posts</code> funciona como em main.html.php.</p>
+
+			<h5>Outros arquivos modelos</h5>
+			<p>Geralmente contém apenas tags HTML, ou por exemplo um widget de pesquisa: <code class="c">search()</code></p>
 		</section>
 
 	</main>

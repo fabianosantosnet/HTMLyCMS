@@ -130,8 +130,16 @@ Conclusao.
 
 Informação dessa categoria.</code></p>
 
-			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem, veja as demais em  <a href="./estrutura.html">detalhes da estrutura</a>.</p>
+			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem, veja as demais em  <a href="./estrutura.html">detalhes da estrutura</a>.</p><br>
 
+			<h4>Customização de configuração</h4>
+			<p>Você pode estender as funcionalidades do HTMLy criando variáveis customizadas de dois modos:
+				<ul>
+					<li>Alterando o arquivo <code class="p">config/config.ini</code> e adicionando a variável <code>sua.variavel="valor desejado"</code>;</li>
+					<li>Inserindo a variável no painel de administração em <em>Configurações-&gt;Configurar-&gt;Customizar</em> e preencher "<code>sua.variavel</code>" no campo da esquerda, e na direita o "<code>valor desejado</code>";</li>
+				</ul>
+			
+			<p>Por exemplo, você poderia criar uma variável <code>widget.noticia</code> colocando um script como valor, e depois editar um arquivo do tema, como o post.html e chamar a função <code class="c">&lt;?php echo config('widget.noticia'); ?&gt;</code> para renderizar a notícia.</p>
 		</section>
 
 	</main>
