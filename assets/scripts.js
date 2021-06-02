@@ -33,7 +33,8 @@ window.onload=function(){
 	
 	document.getElementById('sellinks').onchange = function()
 	{
-	   window.open(this.value,'_blank');
+		if(this.value != -1)
+	   		window.open(this.value,'_blank');
 	}
 
 }
