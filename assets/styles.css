@@ -118,6 +118,7 @@ ul li ul li {margin:1rem 0}
     padding: 0 10px 0 0;
     color:#59c
 }
+iframe.centervid {margin:auto;display:block}
 
 .feature-block {}
 .feature-block h3 {}
