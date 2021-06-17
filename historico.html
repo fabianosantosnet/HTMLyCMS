@@ -45,8 +45,8 @@
 
 	<div class="menu">
 		<ul>
-			<li><a href="./index.html" class="active"><i class="fa fa-home"></i>Principal</a></li>
-			<li><a href="./historico.html"><i class="fa fa-link"></i>Histórico</a></li>
+			<li><a href="./index.html"><i class="fa fa-home"></i>Principal</a></li>
+			<li><a href="./historico.html" class="active"><i class="fa fa-link"></i>Histórico</a></li>
 			<li><a href="./instalacao.html"><i class="fa fa-link"></i>Instalação</a></li>
 			<li><a href="./estrutura.html"><i class="fa fa-link"></i>Estrutura</a></li>
 			<li><a href="./dicas-e-outros.html"><i class="fa fa-link"></i>Dicas</a></li>
@@ -63,15 +63,17 @@
 
 		<section>
 			<h3><i class="fa fa-history"></i> Histórico do HTMLy</h3>
+			<div class="sec1">
+				<p>HTMLy é uma plataforma de gerenciamento de conteúdo sem banco de dados de código aberto que utiliza uma estrutura de arquivos simples para armazenamento de dados (do termo em inglês flat-file CMS).</p>
+				<p>Foi construído especificamente para criação de blog, pois implementa um conjunto de widgets específicos já utilizados em outras plataformas, contudo nada impede que você crie também um site corporativo ou pessoal, bastando apenas criar ou adaptar um modelo existente.</p>
 
-			<p>HTMLy é uma plataforma de gerenciamento de conteúdo sem banco de dados de código aberto que utiliza uma estrutura de arquivos simples para armazenamento de dados (do termo em inglês flat-file CMS).</p>
-			<p>Foi construído especificamente para criação de blog, pois implementa um conjunto de widgets específicos já utilizados em outras plataformas, contudo nada impede que você crie também um site corporativo ou pessoal, bastando apenas criar ou adaptar um modelo existente.</p>
-
-			<p>O <abbr title="Do inglês 'Content Management System' - traduzido como 'Sistema de Gerenciamento de Conteúdo'">CMS</abbr> utiliza um algoritmo exclusivo para encontrar ou listar qualquer conteúdo com base em data, categoria, tag ou autor, e o desempenho permanecerá rápido mesmo se tivermos milhares de postagens e centenas de tags. Além disso, por ser leve uma hospedagem com PHP compartilhada é o suficiente.</p>
-
+				<p>O <abbr title="Do inglês 'Content Management System' - traduzido como 'Sistema de Gerenciamento de Conteúdo'">CMS</abbr> utiliza um algoritmo exclusivo para encontrar ou listar qualquer conteúdo com base em data, categoria, tag ou autor, e o desempenho permanecerá rápido mesmo se tivermos milhares de postagens e centenas de tags. Além disso, por ser leve uma hospedagem com PHP compartilhada é o suficiente.</p>
+			</div>
+			
 			<p>Vejamos as principais atualizações desde o seu início:</p>
-			<ul>
-				<li>2014
+			
+			<ul id="hist">
+				<li><span class="year">2014</span>
 					<ul>
 						<li>Janeiro - já tinha sido incluido suporte a diversos autores, postagens relacionadas (baseada em tags), recurso de multi-tags, Editor MarkDown baseado no <a href="https://code.google.com/archive/p/pagedown/">pageDown</a> e suporte a <a href="https://translate.google.com/translate?sl=auto&tl=pt&u=https://michelf.ca/projects/php-markdown/extra/">PHP Markdown Extra</a>.</li>
 						<li>Fevereiro - adicionado a função de usuário, menu customizável sem necessidade de HTML para páginas estáticas (que se vazio, tentará gerar os links automaticamente), importador de Feed RSS 2.0, comentários do facebook, lightbox, melhoria no núcleo do CMS para a pesquisa, o recurso de backup e suporte ao SSL.</li>
@@ -83,7 +85,7 @@
 					</ul>
 				</li>
 
-				<li>2015
+				<li><span class="year">2015</span>
 					<ul>
 						<li>Janeiro - incluído guia de configuração na barra de administração e para pré-release incluído a linha <code>prerelease="true"</code> no <em>config.ini</em>.</li>
 
@@ -104,7 +106,7 @@
 					</ul>
 				</li>
 
-				<li>2016
+				<li><span class="year">2016</span>
 					<ul>
 						<li>Janeiro - incluído o suporte de cortar um artigo inserindo o código <code>&lt;!--more--&gt;</code> na postagem, além disso adicionado o widget category_list(), listagem de posts baseado no tipo de conteúdo (<code>www.example.com/type/image</code>) e criado índice de categoria para acelerar o carregamento quando há centenas de páginas.</li>
 
@@ -113,17 +115,17 @@
 				</li>
 
 
-				<li>Parada no desenvolvimento
+				<li><span class="year">Parada no desenvolvimento</span>
 					<ul><li>De Fevereiro de 2016 a Abril de 2020 o projeto ficou sem atualização. E surgiram alguns forks dentre os quais destaco <a href="https://github.com/trendschau/tumbly">Tumbly</a> (e sua <a href="https://documentup.com/trendschau/tumbly">documentação</a>) e o <a href="https://github.com/bluebirch/htmly/">bluebirch HTMLy</a>.</li></ul>
 				</li>
 
-				<li>2020
+				<li><span class="year">2020</span>
 					<ul>
 						<li>Maio - melhorado a segurança, adicionado recurso de idioma (i18n) e corrigido os temas.</li>
 					</ul>
 				</li>
 
-				<li>2021
+				<li><span class="year">2021</span>
 					<ul>
 						<li>Janeiro - adicionado suporte ao PHP 8, tag de preenchimento automatico e correções de segurança.</li>
 						<li>Fevereiro - na última versão 2.7.7 foi incluido um editor de menu, analítico universal (gtags.js), atualização do painel de administração utilizando o template AdminLTE v3 construído em <a href="https://getbootstrap.com/">Bootstrap</a> e reorganização das páginas de configuração.</li>

@@ -46,15 +46,15 @@ pre,code *,header p { font-family: 'Cousine', monospace !important; }
 .top {height:200px;background:var(--bglogo) aliceblue;border-radius:5px 5px 0px 0px}
 
 .top header {padding:2rem}
-.top header h1 a {color:#59c;text-decoration:none;font-family:Oxanium}
-.top header p {color:azure}
-.top header p a {color:#48c}
+.top header h1 a {color:#39c;text-decoration:none;font-family:Oxanium;text-shadow:1px 1px 4px #fff}
+.top header p {color:azure;text-shadow:-1px 1px 4px #000}
+.top header p a {color:#48c;;text-shadow:none;}
 .top header h1 {text-shadow:-1px 1px 4px azure;font-size:3rem;letter-spacing:0.5rem}
 
-.menu {background-color:#48c;padding-left:1rem;height:3rem}
+.menu {background-color:#48b;padding-left:1rem;height:3rem}
 
 .menu ul {list-style:none;padding:0;margin:0}
-.menu ul li a.active {background-color:#fff}
+.menu ul li a.active {background-color:#adf;color:#356}
 .menu ul li {display:inline-block;padding:0;}
 
 .menu ul li a
@@ -79,12 +79,13 @@ pre,code *,header p { font-family: 'Cousine', monospace !important; }
 main {padding:1rem;margin:0rem 0 2rem 0;color:#48c}
 
 main h2 {padding:4rem 2rem;background-color:#59c;
-   color:aliceblue;margin:0 -1rem;font-size:1.6rem;box-shadow:1px 1px 1px #000;text-align:right}
+         color:aliceblue;margin:0rem -1rem;font-size:1.6rem;
+         text-align:right;}
 
 main h3
 {
          padding:1rem;margin:-1rem -1rem 2rem -1rem;
-         background:#59c;color:azure
+         background:#48c;color:azure
 }
 
 main h3:first-letter {}
@@ -92,6 +93,13 @@ main a {color:#59f}
 main section {background:aliceblue;margin:0;margin:1rem -1rem 1rem -1rem !important;padding:1rem}
 section.f h4 {padding:0.5rem;background-color:#fff;border-left:1rem solid #59c}
 section.f h5 {padding:0.2rem;font-size:small;border-bottom:0.1rem solid #59c;display:inline-block;margin:1rem}
+
+   /*div destaque*/
+   div.sec1 {padding:1rem;background-color:azure;margin:-1rem -1rem  0 -1rem;border:1px solid #49c;box-shadow:1px 1px 1px;margin-bottom:2rem} 
+
+section ul#hist {list-style:none;padding:0}
+section ul#hist span.year {background-color:#C7E9FB;margin:0 -1rem;padding:1rem;font-weight:bold;font-size:1rem;display:block}
+section ul#hist > li {background-color:#fff;padding:1rem;margin:1rem 0rem}
 
 section.f .minilight {margin:0 1.4rem;width:95%}
 section.f div.decor {border:1px solid #59c;width:100%;margin:2rem 0}
