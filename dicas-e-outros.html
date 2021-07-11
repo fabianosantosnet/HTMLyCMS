@@ -74,6 +74,13 @@
 
 			<p>Caso queira apenas trocar a senha, altere a linha <code class="c">password = <span>yourpassword</span></code> - em 'yourpassword' pela senha desejada e também a linha <code class="c">encryption = <span>XXXX</span></code> trocando 'XXXX' para 'clear'.</p>
 
+			
+			<h4><i class="fa fa-globe"></i> Ativar a segurança via reCAPTCHA</h4>
+			<p>reCAPTCHA é um serviço gratuito que protege seu site contra spam e abuso. Ele usa técnicas avançadas de análise de risco para diferenciar humanos de bots.</p>
+			<p>O primeiro passo é ter uma conta no Google, em seguida logar no <a href="http://www.google.com/recaptcha/admin">Console de Administração do reCaptcha</a> e gerar o par de chaves: site key (chave do site) e secret key (chave secreta).</p>			
+			<p>A chave do site é utilizada para fazer a chamada do serviço do Google no seu site ou aplicativo móvel. A chave secreta autoriza a comunicação entre sua aplicação e o servidor reCaptcha ao qual verifica a resposta do usuário. </p>
+			<p>Após logar no serviço do reCAPTCHA, escolha um tipo (v3 ou v2), em seguida coloque seu domínio 'seusite.com.br', selecione para aceitar os termos e clique em Registrar. Na próxima tela irá mostrar os valores gerados dos pares. Copie cada um, logue no Painel de Controle do HTMLy em Configurar-&gt;Widget-&gt;reCAPTCHA, selecione habilitar e cole os pares de chaves nos campos correspondentes.</p>
+			
 			<h4><i class="fa fa-pencil"></i> Edição de arquivos manualmente</h4>
 			<p>Conheça a estrutura dos arquivos:</p>
 			<p><code class="c">/username/blog/category/<span>type</span>/</code> - ao qual o <em>type</em> pode ser: post, video, audio, link e quote.</p>
@@ -132,14 +139,142 @@ Informação dessa categoria.</code></p>
 
 			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem, veja as demais em  <a href="./estrutura.html">detalhes da estrutura</a>.</p><br>
 
-			<h4>Customização de configuração</h4>
+			<h4><i class="fa fa-edit"></i> Customização de configuração</h4>
 			<p>Você pode estender as funcionalidades do HTMLy criando variáveis customizadas de dois modos:
 				<ul>
 					<li>Alterando o arquivo <code class="p">config/config.ini</code> e adicionando a variável <code>sua.variavel="valor desejado"</code>;</li>
 					<li>Inserindo a variável no painel de administração em <em>Configurações-&gt;Configurar-&gt;Customizar</em> e preencher "<code>sua.variavel</code>" no campo da esquerda, e na direita o "<code>valor desejado</code>";</li>
 				</ul>
 			
-			<p>Por exemplo, você poderia criar uma variável <code>widget.noticia</code> colocando um script como valor, e depois editar um arquivo do tema, como o post.html e chamar a função <code class="c">&lt;?php echo config('widget.noticia'); ?&gt;</code> para renderizar a notícia.</p>
+			<p>Por exemplo, você poderia criar uma variável <code>widget.noticia</code> colocando um script como valor, e depois editar um arquivo do tema, como o post.html e chamar a função <code class="c">&lt;?php echo config('widget.noticia'); ?&gt;</code> para renderizar a notícia.</p><br>
+			
+			<h4><i class="fa fa-gear"></i> Arquivo de configuração config.ini</h4>
+			<p>O arquivo de configuração do HTMLy, gerado na instalação em <code>config/config.ini</code> dispôe de diversas variáveis.</p>
+			<p>Note que os itens podem ser editados manualmente ou direto pelo Painel de Controle em Configurações-&gt;Configurar do menu lateral.</p>
+			<p>Comentários são marcados com ponto-e-virgula no início da linha. Veja a lista completa abaixo <sup>v2.8.1</sup>.</p>
+			
+<code class="minilight">; Arquivo de configuração			&lt;-- Exemplo de comentário
+site.url = ""					&lt;-- URL do site (requerido para que o site funcione)
+	
+timezone = "America/Sao_Paulo"			&lt;-- Seta o timezone para a localidade de São Paulo
+date.format = "%d/%m/%Y"			&lt;-- Exemplo do padrão em português 'dd/mm/yyyy' (+ formatos em "https://bit.ly/2Vwwetd")
+language = "pt_BR"				&lt;-- Define o CMS com idioma em português
+
+blog.title = ""					&lt;-- Nome do site/blog
+blog.tagline = ""				&lt;-- Slogan do site/blog
+blog.description = ""				&lt;-- Descrição do site/blog
+blog.copyright = "(c) Seu nome"			&lt;-- Direitos reservados
+	
+permalink.type = "default"			&lt;-- Define o formato padrão dos links
+						    "default" para o formato '/ano/mes/titulo'
+						    "post" para '/post/titulo'
+...<!--	
+https://github.com/danpros/htmly/blob/master/config/config.ini.example
+static.frontpage = "false"			&lt;-- 
+
+blog.enable = "false"				&lt;-- 
+
+social.twitter = ""
+social.facebook = ""
+
+breadcrumb.home = "Home"
+
+comment.system = "disable"
+
+fb.appid = ""
+fb.num = "5"
+fb.color = "light"
+	
+disqus.shortname = ""
+
+google.wmt.id = ""
+google.analytics.id = ""
+google.gtag.id = ""
+	
+; Google reCaptcha
+; https://www.google.com/recaptcha/admin. Options "false" and "true"
+
+google.reCaptcha = "false"
+google.reCaptcha.public = ""
+google.reCaptcha.private = ""
+
+; Pagination, RSS, and JSON
+posts.perpage = "10"
+category.perpage = "10"
+tag.perpage = "10"
+archive.perpage = "10"
+search.perpage = "10"
+profile.perpage = "10"
+type.perpage = "10"
+json.count = "10"
+
+; Category info
+category.info = "true"
+
+; Related posts
+related.count = "3"
+
+; Recent posts
+recent.count = "5"
+
+; Popular posts
+popular.count = "5"
+
+; Teaser type: set "trimmed" or "full".
+teaser.type = "full"
+
+; Read more link text for "full" teaser type
+read.more = "Read more"
+
+; Teaser character count
+teaser.char = "200"
+
+; Description character count
+description.char = "150"
+
+; RSS feed count
+rss.count = "10"
+
+; RSS feed description length. If left empty we will use full page.
+rss.char = "200"
+
+; Enable views Counter, the options is "true" and "false". If set to "true", you can see the Counts in Admin page and popular posts.
+views.counter = "false"
+
+; Sitemap priorities between "0.0" and "1.0". Set "false" to disable a sitemap for the given type. (See /sitemap.xml)
+sitemap.priority.base = "1.0"
+sitemap.priority.post = "0.5"
+sitemap.priority.static = "0.5"
+sitemap.priority.category = "0.5"
+sitemap.priority.tag = "0.5"
+sitemap.priority.archiveDay = "0.5"
+sitemap.priority.archiveMonth = "0.5"
+sitemap.priority.archiveYear = "0.5"
+sitemap.priority.author = "0.5"
+sitemap.priority.type = "0.5"
+
+; Also install pre-release
+prerelease = "false"
+
+; Cache expiration in hour. Eg. "6", "12". Default 6 hours.
+cache.expiration = "6"
+
+; Switch on and off the file cache for development purposes. Options "false" and "true"
+cache.off = "false"
+
+; Switch on and off the page generation time. Options "false" and "true"
+generation.time = "false"
+
+; Switch on and off the cache timestamp. Options "false" and "true"
+cache.timestamp = "false"
+
+; Set the theme here
+views.root = "themes/twentyfifteen"
+
+; Framework config. No need to edit.
+views.layout = "layout"--></code>
+			
+			<p></p>			
 		</section>
 
 	</main>

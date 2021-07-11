@@ -111,7 +111,93 @@
 			<iframe width="560" height="315" class="centervid" src="https://www.youtube.com/embed/A4REXz-6ANM?rel=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				
 			<h4><i class="fa fa-wrench"></i> Configuração básica no WebServer</h4>
-			<p><a href="https://docs.htmly.com/web-servers/nginx">NGIX</a> / <a href="https://docs.htmly.com/web-servers/apache">Apache Virtual Host</a> / <a href="https://docs.htmly.com/web-servers/lighttpd">Lighttpd</a></p><br>
+			<h5>Nginx</h5>
+			<code class="minilight">server {
+  listen 80;
+
+  server_name example.com www.example.com;
+  root /usr/share/nginx/html;
+
+  access_log /var/log/nginx/access.log;
+  error_log /var/log/nginx/error.log error;
+
+  index index.php;
+
+  location ~ /config/ {
+     deny all;
+  }
+
+  location / {
+    try_files $uri $uri/ /index.php?$args;
+  }
+
+  location ~ \.php$ {
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+  }
+}
+
+# ref: https://docs.htmly.com/web-servers/nginx</code>
+			
+			<h5>Apache Virtual Host</h5>
+			<code class="minilight">&lt;virtualhost *:80&gt;
+  ServerName example.com
+  ServerAlias example.com www.example.com
+  ServerAdmin me@example.com
+  DocumentRoot /var/www/html/example_com
+  ErrorLog /var/log/httpd/example_com_error
+  CustomLog /var/log/httpd/example_com_access common
+  &lt;Directory "/var/www/html/example_com"&gt;
+    Options FollowSymLinks Indexes
+    AllowOverride All
+    Order Allow,Deny
+    Allow from all
+    DirectoryIndex index.php
+   &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+				
+caso apresente o erro "AH01630: client denied by server configuration", utilize:
+				
+&lt;virtualhost *:80&gt;
+  ServerName example.com
+  ServerAlias example.com www.example.com
+  ServerAdmin me@example.com
+  DocumentRoot /var/www/html/example_com
+  ErrorLog /var/log/httpd/example_com_error
+  CustomLog /var/log/httpd/example_com_access common
+  &lt;Directory "/var/www/html/example_com"&gt;
+    Options FollowSymLinks Indexes
+    AllowOverride All
+    Require all granted
+    DirectoryIndex index.php
+   &lt;/Directory&gt;
+&lt;/VirtualHost&gt;	
+				
+# ref: https://docs.htmly.com/web-servers/apache</code>
+		
+			<h5>Lighttpd</h5>
+			<code class="minilight">$HTTP["url"] =~ "^/config" {
+  url.access-deny = ( "" )
+}
+$HTTP["url"] =~ "^/system/includes" {
+  url.access-deny = ( "" )
+}
+$HTTP["url"] =~ "^/system/admin/views" {
+  url.access-deny = ( "" )
+}
+
+url.rewrite-once = (
+  "^/(themes|system|vendor|content/images)/(.*)" => "$0",
+  "^/(favicon\.ico|robots\.txt|humans\.txt|sitemap\.xml)$" => "$0",
+  "^/(.*\.php)" => "$0",
+
+  # Everything else is handles by htmly
+  "^/(.*)$" => "/index.php/$1"
+)
+
+# ref: https://docs.htmly.com/web-servers/lighttpd</code>
 
 		</section>
 
