@@ -157,7 +157,7 @@ Informação dessa categoria.</code></p>
 site.url = ""					&lt;-- URL do site (requerido para que o site funcione)
 	
 timezone = "America/Sao_Paulo"			&lt;-- Seta o timezone para a localidade de São Paulo
-date.format = "%d/%m/%Y"			&lt;-- Exemplo do padrão em português 'dd/mm/yyyy' (+ formatos em "https://bit.ly/2Vwwetd")
+date.format = "%d/%m/%Y"			&lt;-- Exemplo do padrão em português 'dd/mm/yyyy' (+ no link "https://bit.ly/2Vwwetd")
 language = "pt_BR"				&lt;-- Define o CMS com idioma em português
 
 blog.title = ""					&lt;-- Nome do site/blog
@@ -168,81 +168,86 @@ blog.copyright = "(c) Seu nome"			&lt;-- Direitos reservados
 permalink.type = "default"			&lt;-- Define o formato padrão dos links
 						    "default" para o formato '/ano/mes/titulo'
 						    "post" para '/post/titulo'
-...<!--	
-https://github.com/danpros/htmly/blob/master/config/config.ini.example
-static.frontpage = "false"			&lt;-- 
-
-blog.enable = "false"				&lt;-- 
-
-social.twitter = ""
-social.facebook = ""
-
-breadcrumb.home = "Home"
-
-comment.system = "disable"
-
-fb.appid = ""
-fb.num = "5"
-fb.color = "light"
 	
-disqus.shortname = ""
+static.frontpage = "false"			&lt;-- Define o tipo de página inicial
+						    "false" - padrão como visualização de blog
+						    "true" - ativa a página como estática, se preferir utilizar o mesmo layout e main,
+						             apenas crie o arquivo static--front.html.php como base no static.html.php
 
-google.wmt.id = ""
-google.analytics.id = ""
-google.gtag.id = ""
+blog.enable = "false"				&lt;-- Desabilita "false" ou Habilita "true" o link '/blog'
+						    Ideal "true" quando a página inicial é estática
+
+; Redes sociais
+social.twitter = ""				&lt;-- Link do Twitter
+social.facebook = ""				&lt;-- Link do Facebook
 	
-; Google reCaptcha
-; https://www.google.com/recaptcha/admin. Options "false" and "true"
+breadcrumb.home = "Inicial"			&lt;-- Define o texto do link da página inicial
+	
+comment.system = "disable"			&lt;-- Escolha "facebook", "disqus" ou desativado "disable" para o sistema de comentário 
+	
+; serviço de comentários do Facebook
+fb.appid = "" 					&lt;-- Necessário ter uma conta de desenvolvedor do Facebook e criar o ID de Aplicativo "https://bit.ly/3B6K31A"
+fb.num = "5" 					&lt;-- Define o número de publicações
+fb.color = "light" 				&lt;-- Define a cor "light" (claro) ou "dark" para escuro
 
-google.reCaptcha = "false"
-google.reCaptcha.public = ""
-google.reCaptcha.private = ""
+; serviço de comentários Disqus	
+disqus.shortname = ""				&lt;-- Informe o id gerado no site 'disqus.com'
 
-; Pagination, RSS, and JSON
-posts.perpage = "10"
-category.perpage = "10"
-tag.perpage = "10"
-archive.perpage = "10"
-search.perpage = "10"
-profile.perpage = "10"
-type.perpage = "10"
-json.count = "10"
+; Ferramentas do Google
+google.wmt.id = ""				&lt;-- Identificação do Web Master Tools
+google.gtag.id = ""			        &lt;-- Identificador da versão recente do Universal Analytics
+google.analytics.id = ""		        &lt;-- ID do Google Analytics (legado)
 
-; Category info
-category.info = "true"
+; Segurança no Login com Google reCAPTCHA
+google.reCaptcha = "false"		        &lt;-- "true" para habilitar o serviço / "false" desabilitado por padrão [+ detalhes acima]
+google.reCaptcha.public = ""			&lt;-- chave pública
+google.reCaptcha.private = ""			&lt;-- chave privada
 
-; Related posts
-related.count = "3"
+; Paginação, RSS e JSON
+posts.perpage = "10"				&lt;-- Número de posts por página
+category.perpage = "10"				&lt;-- Número de posts por página filtrados por Categoria
+tag.perpage = "10"				&lt;-- Número de posts por página filtrados por Tag
+archive.perpage = "10"				&lt;-- Número de posts por página filtrados por Arquivados
+search.perpage = "10"				&lt;-- Número de posts por página no resultado da Busca
+profile.perpage = "10"				&lt;-- Número de posts por página no perfil de usuário
+json.count = "10"				&lt;-- Resultados da API JSON	
+type.perpage = "10"				&lt;-- Número de posts por página por tipo 
+						    Link 'https://site.com.br/type/TIPO' sendo TIPO 'post, video, audio, link ou quote'
+	
+; Informação da categoria
+category.info = "true"				&lt;-- Ativa "true" ou Desativa "false" a descrição
 
-; Recent posts
-recent.count = "5"
+; Postagem relacionada
+related.count = "3"				&lt;-- Limita o número de posts relacionadas
 
-; Popular posts
-popular.count = "5"
+; Postagem recente
+recent.count = "5"				&lt;-- Define o limite de postagens recentes
 
-; Teaser type: set "trimmed" or "full".
-teaser.type = "full"
+; Postagem popular
+popular.count = "5"				&lt;-- Número de posts populares
 
-; Read more link text for "full" teaser type
-read.more = "Read more"
+; Resumo do texto
+teaser.type = "full"				&lt;-- Define se a postagem será completa "full" ou limitada "trimmed"
+						    Quando "full" Você pode limitar o texto no editor utilizando CONTROL+M ou clicando no ícone seta para direita
+	
+read.more = "Leia mais"				&lt;-- Texto utilizado no link quando a postagem é limitada
+teaser.char = "200"				&lt;-- Número de caracteres máximo para a postagem limitada
 
-; Teaser character count
-teaser.char = "200"
+; Para buscadores
+description.char = "150"			&lt;-- Limite de caracteres para a descrição do artigo
 
-; Description character count
-description.char = "150"
+; Notícias
+rss.count = "10" 				&lt;-- Número de posts no RSS
+rss.char = "200"				&lt;-- Limite de caracteres para postagem, caso vazio irá mostrar o post completo
 
-; RSS feed count
-rss.count = "10"
+; Visualizações
+views.counter = "false"  			&lt;-- Habilita "true" ou Desabilita "false" a visualização de contagem de visitas na página de Administração
 
-; RSS feed description length. If left empty we will use full page.
-rss.char = "200"
-
-; Enable views Counter, the options is "true" and "false". If set to "true", you can see the Counts in Admin page and popular posts.
-views.counter = "false"
-
-; Sitemap priorities between "0.0" and "1.0". Set "false" to disable a sitemap for the given type. (See /sitemap.xml)
-sitemap.priority.base = "1.0"
+; Prioridades do Sitemap	
+	
+sitemap.priority.base = "1.0" 			&lt;-- Defina "false" para desativar um item. 
+						    Prioridades são classificadas entre "0.0" e "1.0" sendo o número maior com mais prioridade.
+						    Navegue pelo sitemap em "https://seusite.com.br/sitemap.xml" (+ em "https://bit.ly/3enlnID")
 sitemap.priority.post = "0.5"
 sitemap.priority.static = "0.5"
 sitemap.priority.category = "0.5"
@@ -253,28 +258,30 @@ sitemap.priority.archiveYear = "0.5"
 sitemap.priority.author = "0.5"
 sitemap.priority.type = "0.5"
 
-; Also install pre-release
-prerelease = "false"
+; Pré-lançamentos
+prerelease = "false"				&lt;-- Defina "true" instalar também as versões de teste
 
-; Cache expiration in hour. Eg. "6", "12". Default 6 hours.
-cache.expiration = "6"
+; Cache
+cache.expiration = "6" 				&lt;-- Define o número de horas para expirar o cache (padrão 6 horas)
+cache.off = "false" 				&lt;-- Ative "true" ou Desative "false" o cache das páginas e outros
 
-; Switch on and off the file cache for development purposes. Options "false" and "true"
-cache.off = "false"
+; Métricas
+generation.time = "false" 			&lt;-- Defina "true" para mostrar o tempo de geração da página comentada no HTML
 
-; Switch on and off the page generation time. Options "false" and "true"
-generation.time = "false"
+; Cache TimeStamp
+cache.timestamp = "false" 			&lt;-- Defina "true" para habilitar o cache timestamp
 
-; Switch on and off the cache timestamp. Options "false" and "true"
-cache.timestamp = "false"
+; Tema ativo
+views.root = "themes/twentyfifteen" 		&lt;-- Coloque o caminho da pasta do tema
 
-; Set the theme here
-views.root = "themes/twentyfifteen"
+; Framework
+views.layout = "layout" 			&lt;-- Página 'index' para carregamento do tema
 
-; Framework config. No need to edit.
-views.layout = "layout"--></code>
-			
-			<p></p>			
+; Miniatura (não padrão)
+img.thumbnail = "false" 			&lt;-- Coloque "true" para definir a miniatura (depende do tema implementar)
+default.thumbnail = "" 				&lt;-- Inserir a imagem padrão de miniatura
+	
+... 						&lt;-- Novas variáveis customizadas definidas no painel irão aparecer aqui, caso precise excluir alguma apague aqui</code>			
 		</section>
 
 	</main>
