@@ -151,15 +151,22 @@
 			<ul>
 				<li><code>echo head_contents();</code> - imprime as tags e metatags de cabeçalho como RSS, charset, viewport dentre outros;</li>
 				<li><code>echo $title . ' ' . $description .' ' . $canonical;</code> - imprime o título, a descrição e o meta canônico da página;</li>
-				<li><code>site_url()</code> - informa a URL do site;</li>
-				<li><code>facebook()</code> - imprime o script do Facebook, se utilizarmos seu comentário;</li>
+				<li><code>site_url()</code> - informa a URL do site;<br><br></li>
+				
+				<li><code>facebook()</code> - imprime o script do Facebook, se utilizarmos seu comentário<br>
+					<small>Necessário habilitar no Painel de Controle em <span>Configurações-&gt;Configurar-&gt;Widget-&gt;Comentários e selecionarmos Facebook, e inserir o <a href="https://bit.ly/3B6K31A">Facebook App Id</a></span></small><br><br></li>
+				
 				<li><code>login()</code> - utilizado para verificação se está logado;</li>
 				<li><code>toolbar()</code> - mostra a barra de ferramentas no topo;</li>
-				<li><code>is_index()</code> - checa se a página atual é a inicial;</li>
+				<li><code>is_index()</code> - checa se a página atual é a inicial;<br><br></li>
+				
 				<li><code>blog_title() / blog_tagline() / blog_description()</code> - na sequencia informa imprime o título, o slogan e a descrição do blog;</li>
 				<li><code>content()</code> - imprime o conteúdo principal de outro arquivo modelo como main.html.php ou post.html.php;</li>
-				<li><code>copyright()</code> - informa um aviso de direitos autorais e link de crédito</li>
-				<li><code>analytics()</code> - imprime o Google Analytics.</li>				
+				<li><code>copyright()</code> - informa um aviso de direitos autorais e link de crédito;<br><br></li>
+				
+				<li><code>analytics()</code> - imprime o Google Analytics.<br>
+				     <small>Configure no site do Google e depois vá no Painel de Controle em <span>Configurações-&gt;Configurar-&gt;Widget-&gt;Google Analytics</span> e preencha os campos.</small>
+				</li>				
 			</ul>
 			
 			<h5>main.html.php</h5>
@@ -186,17 +193,20 @@ $p->audio
 $p->quote
 $p->link
 </code></pre>	
-					<small>* na versão 2.8 - <code>$p-&gt;video</code> agora retorna apenas o link do vídeo, para obter o ID do vídeo, utilize <code>get_video_id ($p-&gt;video)</code>.<br>
+					<small>* na versão 2.8 - <code>$p-&gt;video</code> agora retorna apenas o link do vídeo, para obter o ID do vídeo, utilize <code>get_video_id($p-&gt;video)</code>.<br>
 					* na versão 2.8.1 foi introduzido as variáveis: <code>$p->readTime, $p->authorName, $p->authorAbout</code> para o tema.</small><br><br>
 					
 				</li>
 				
 				<li><code>get_teaser($p->body, $p->url)</code> - imprime o resumo, se estiver setado nas configurações o teaser.type como 'trimmed', caso contrário imprime todo o artigo; </li>
-				<li><code>$category->title / $category->body</code> - título e conteúdo da categoria;</li>
+				<li><code>$category->title / $category->body</code> - título e conteúdo da categoria;<br><br></li>
+				
 				<li><code>$tag->title / $archive->title / $search->title</code> - título da tag, título dos arquivados e da busca;</li>
-				<li><code>$breadcrumb</code> - imprime o <span title="sistema de navegação estrutural usada para proporcionar ao usuário um meio de localização dentro da estrutura de navegação do site">breadcrumb</span>;</li>
+				
 				<li><code>$pagination['prev'] / $pagination['next'] / $page / $pagination['pagenum']</code> - variáveis de paginação;</li>				
 				<li><code>$pagination['html']</code> - renderiza a paginação completa;</li>
+				
+				<li><code>$breadcrumb</code> - imprime o <span title="sistema de navegação estrutural usada para proporcionar ao usuário um meio de localização dentro da estrutura de navegação do site">breadcrumb</span>;<br><br></li>
 				<li><code>disqus_count()</code> - mostra a numeração de comentários do Disqus.</li>
 			</ul>
 			
@@ -226,10 +236,11 @@ $p->link
 				<small>* na versão 2.8 - <code>$p-&gt;video</code> agora retorna apenas o link do vídeo, para obter o ID do vídeo, utilize <code>get_video_id ($p-&gt;video)</code>.</small><br><br>
 					
 				</li>
+
+				<li><code>$prev / $next</code> - para navegação na postagem;</li>
+				<li><code>$post / $next</code> - as duas coleções contém todas as variável como em <em>$p</em> descrita acima, exemplo: <code class="c">$prev['url'] / $prev['image']</code>;<br><br></li>
 				
 				<li><code>$breadcrumb / disqus($p->title, $p->url) / disqus_count()</code> - para navegação, o comentário disqus e sua contagem;</li>
-				<li><code>$prev / $next</code> - para navegação na postagem;</li>
-				<li><code>$post / $next</code> - as duas coleções contém todas as variável como em <em>$p</em> descrita acima, exemplo: <code class="c">$prev['url'] / $prev['image']</code>;</li>
 				<li><code>get_related($p->related)</code> - referente aos posts relacionados;</li>				
 			</ul>	
 			

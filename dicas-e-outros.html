@@ -72,73 +72,21 @@
 
 			<p>Isso produzirá um hash que deve ser colocada no campo de password em username.ini. Certifique-se de que o campo de criptografia esteja definido como password_hash.</p>
 
-			<p>Caso queira apenas trocar a senha, altere a linha <code class="c">password = <span>yourpassword</span></code> - em 'yourpassword' pela senha desejada e também a linha <code class="c">encryption = <span>XXXX</span></code> trocando 'XXXX' para 'clear'.</p>
+			<p>Caso queira apenas trocar a senha, altere a linha <code class="c">password = <span>yourpassword</span></code> - em 'yourpassword' pela senha desejada e também a linha <code class="c">encryption = <span>XXXX</span></code> trocando 'XXXX' para 'clear'.</p><br>
 
 			
 			<h4><i class="fa fa-globe"></i> Ativar a segurança via reCAPTCHA</h4>
 			<p>reCAPTCHA é um serviço gratuito que protege seu site contra spam e abuso. Ele usa técnicas avançadas de análise de risco para diferenciar humanos de bots.</p>
 			<p>O primeiro passo é ter uma conta no Google, em seguida logar no <a href="http://www.google.com/recaptcha/admin">Console de Administração do reCaptcha</a> e gerar o par de chaves: site key (chave do site) e secret key (chave secreta).</p>			
 			<p>A chave do site é utilizada para fazer a chamada do serviço do Google no seu site ou aplicativo móvel. A chave secreta autoriza a comunicação entre sua aplicação e o servidor reCaptcha ao qual verifica a resposta do usuário. </p>
-			<p>Após logar no serviço do reCAPTCHA, escolha um tipo (v3 ou v2), em seguida coloque seu domínio 'seusite.com.br', selecione para aceitar os termos e clique em Registrar. Na próxima tela irá mostrar os valores gerados dos pares. Copie cada um, logue no Painel de Controle do HTMLy em Configurar-&gt;Widget-&gt;reCAPTCHA, selecione habilitar e cole os pares de chaves nos campos correspondentes.</p>
+			<p>Após logar no serviço do reCAPTCHA, escolha um tipo (v3 ou v2), em seguida coloque seu domínio 'seusite.com.br', selecione para aceitar os termos e clique em Registrar. Na próxima tela irá mostrar os valores gerados dos pares. Copie cada um, logue no Painel de Controle do HTMLy em Configurar-&gt;Widget-&gt;reCAPTCHA, selecione habilitar e cole os pares de chaves nos campos correspondentes.</p><br>
+
+			<h4><i class="fa fa-globe"></i> Migração do Blogger Manual</h4>
+			<p>Para a URL ficar coerente com a do Blogger primeiro vá em Configurações-&gt;Configurar-&gt;Metatags, e em Link permante altere para '/ano/mes/url-da-postagem'. Depois na <a href="https://github.com/danpros/htmly/blob/master/system/admin/admin.php#L125">linha 125 do arquivo</a> localizado em <em>system/admin/admin.php</em> adicione o ponto '<span style="color:red">.</span>' sem as aspas depois de 'Z0-9' ficando "/[^a-zA-Z0-9<b style="color:red">.</b> \-...". Faça também a alteração na <a href="https://github.com/danpros/htmly/blob/master/system/admin/admin.php#L265">linha 265</a>. Após a alteração vá em Configurações->Ferramentas e clique em Limpar Cache. Quando for adicionar uma postagem lembre-se de incluir o '.html' na URL.</p>
 			
-			<h4><i class="fa fa-pencil"></i> Edição de arquivos manualmente</h4>
-			<p>Conheça a estrutura dos arquivos:</p>
-			<p><code class="c">/username/blog/category/<span>type</span>/</code> - ao qual o <em>type</em> pode ser: post, video, audio, link e quote.</p>
-			<ul>
-				<li><b>username</b> deve ser o mesmo de <code class="p">config/users/<span>username</span>.ini</code></li>
-				<li><b>category</b> deve corresponder a category.md dentro de <code class="p">content/data/category/<span>category.md</span></code> exceto a categoria uncategorized (não categorizada - não precisa estar nessa pasta)</li>
-			</ul>
-
-			<p>Para páginas estáticas envie os arquivos para <code class="p">/content/static</code>:</p>
-			<ul>
-				<li>ao criar a página 'sobre' <code class="c">/content/static/<span>sobre.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre</strong></code></li>
-				<li>para sub-páginas <code class="c">/content/static/sobre/<span>equipe.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre/equipe</strong></code></li>
-			</ul>
-
-			<h5><i class="fa fa-file-o"></i> Nome de arquivo</h5>
-			<p>Quando você cria um post pelo painel de controle é criado um arquivo com o padrão:</p>
-			<p><code class="p"><span>2021-03-16-10-32-40_tag1,tag2,tag3_nome-do-artigo.md</span></code></p>
-
-			<p>Explicação (separada pelo sublinhado):</p>
-			<ul>
-				<li><code class="p">2021-03-16</code> é a data da criação da postagem no formato <code class="c">yyyy-mm-dd-hh-mm-ss</code>;</li>
-				<li><code class="p">tag1,tag2,tag3</code> são as tags relacionadas ao artigo/post separadas por vigula quando há mais de uma;</li>
-				<li><code class="p">nome-do-artigo</code> representa a URL.</li>
-			</ul>
-
-			<h5><i class="fa fa-file-o"></i> Meta tags de conteúdo</h5>
-			<p>Para edição de arquivo manual você precisa criar as tags:</p>
-
-			<p>Defina o título entre os 't'<br><code class="p"><span>&lt;!--t</span> Título <span>t--&gt;</span></code></p>
-			<p>Coloque a descrição entre os 'd'<br><code class="p"><span>&lt;!--d</span> Descrição <span>d--&gt;</span></code></p>
-			<p>Escreva o nome das tags relacionadas entre 'tag' de início e fim<br><code class="p"><span>&lt;!--tag</span> tag01,tag02,tag03,tag04,tag05 <span>tag--&gt;</span></code></p>
-
-			<p>Postagem com imagem em destaque entre os 'image'<br><code class="p"><span>&lt;!--image</span> http://www.example.com/image-url/image.jpg <span>image--&gt;</span></code></p>
-			<p>Postagem de vídeo do Youtube em destaque entre os 'video'<br><code class="p"><span>&lt;!--video</span> ´https://www.youtube.com/watch?v=xxxxxxx <span>video--&gt;</span></code></p>
-			<p>Postagem com áudio do SoundCloud em destaque entre os 'audio'<br><code class="p"><span>&lt;!--audio</span> ´https://soundcloud.com/xxxx/audio-url <span>audio--&gt;</span></code></p>
-			<p>Postagem de link em destaque entre os 'link'<br><code class="p"><span>&lt;!--link</span> https://linkdoartigodestacado.com.br <span>link--&gt;</span></code></p>
-			<p>Postagem de citação em destaque entre os 'quote'<br><code class="p"><span>&lt;!--quote</span> A citação é uma marca do dialogismo linguístico, feita para sustentar uma hipótese ...(Wikipedia) <span>quote--&gt;</span></code></p>
-
-			<p>Exemplo completo: <br><code class="p">
-&lt;!--t Título do artigo t--&gt;
-&lt;!--d Descrição do artigo (resumo) d--&gt;
-&lt;!--tag Tag1,Tag2 tag--&gt;
-&lt;!--video https://www.youtube.com/watch?v=xxxxxxx video--&gt;
-
-Introducao do artigo
-Desenvolvimento
-Conclusao.
-
-</code></p>
-			<h5><i class="fa fa-file-o"></i> Categoria</h5>
-			<p>Crie uma categoria, por exemplo, 'Informática' dentro de <code class="p">content/data/category/<span>informatica.md</span></code> com o conteúdo:</p>
-			<p><code class="p">&lt;!--t Informatica t--&gt;
-&lt;!--d Descrição dessa categoria d--&gt;
-
-Informação dessa categoria.</code></p>
-
-			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem, veja as demais em  <a href="./estrutura.html">detalhes da estrutura</a>.</p><br>
-
+			<p>Para importar o conteúdo do Blogger primeiro vá nas configurações de seu blog do Blogger, e altere a opção para que o RSS (ou Feed) esteja com a versão completa, depois vá no Painel de Controle do HTMLy em <span>Ferramentas-&gt;Importar RSS</span> e cole a URL do RSS de seu blog e clique no botão. Pode ser que ocorra falha, nesse caso você pode gerar os arquivos manualmente, copiando o conteúdo e criando postagem por postagem ou editando o HTML por FTP ou FileManager (Gerenciador de Arquivos) de sua hospedagem seguindo o <a href="./estrutura.html">detalhamento da estrutura</a>.</p><br>
+			
+			
 			<h4><i class="fa fa-edit"></i> Customização de configuração</h4>
 			<p>Você pode estender as funcionalidades do HTMLy criando variáveis customizadas de dois modos:
 				<ul>

@@ -293,6 +293,66 @@ upload.php
 /themes				&lt;-- Local para colocar as pastas dos temas do site/blog
 			</code>
 
+			<section class="f">
+			<h4><i class="fa fa-pencil"></i> Edição de arquivos manualmente</h4>
+			<p>Conheça a estrutura dos arquivos:</p>
+			<p><code class="c">/username/blog/category/<span>type</span>/</code> - ao qual o <em>type</em> pode ser: post, video, audio, link e quote.</p>
+			<ul>
+				<li><b>username</b> deve ser o mesmo de <code class="p">config/users/<span>username</span>.ini</code></li>
+				<li><b>category</b> deve corresponder a category.md dentro de <code class="p">content/data/category/<span>category.md</span></code> exceto a categoria uncategorized (não categorizada - não precisa estar nessa pasta)</li>
+			</ul>
+
+			<p>Para páginas estáticas envie os arquivos para <code class="p">/content/static</code>:</p>
+			<ul>
+				<li>ao criar a página 'sobre' <code class="c">/content/static/<span>sobre.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre</strong></code></li>
+				<li>para sub-páginas <code class="c">/content/static/sobre/<span>equipe.md</span></code> - gera a url <code class="p">https://seuSite.com.br/<strong>sobre/equipe</strong></code></li>
+			</ul>
+
+			<h5><i class="fa fa-file-o"></i> Nome de arquivo</h5>
+			<p>Quando você cria um post pelo painel de controle é criado um arquivo com o padrão:</p>
+			<p><code class="p"><span>2021-03-16-10-32-40_tag1,tag2,tag3_nome-do-artigo.md</span></code></p>
+
+			<p>Explicação (separada pelo sublinhado):</p>
+			<ul>
+				<li><code class="p">2021-03-16</code> é a data da criação da postagem no formato <code class="c">yyyy-mm-dd-hh-mm-ss</code>;</li>
+				<li><code class="p">tag1,tag2,tag3</code> são as tags relacionadas ao artigo/post separadas por vigula quando há mais de uma;</li>
+				<li><code class="p">nome-do-artigo</code> representa a URL.</li>
+			</ul>
+
+			<h5><i class="fa fa-file-o"></i> Meta tags de conteúdo</h5>
+			<p>Para edição de arquivo manual você precisa criar as tags:</p>
+
+			<p>Defina o título entre os 't'<br><code class="p"><span>&lt;!--t</span> Título <span>t--&gt;</span></code></p>
+			<p>Coloque a descrição entre os 'd'<br><code class="p"><span>&lt;!--d</span> Descrição <span>d--&gt;</span></code></p>
+			<p>Escreva o nome das tags relacionadas entre 'tag' de início e fim<br><code class="p"><span>&lt;!--tag</span> tag01,tag02,tag03,tag04,tag05 <span>tag--&gt;</span></code></p>
+
+			<p>Postagem com imagem em destaque entre os 'image'<br><code class="p"><span>&lt;!--image</span> http://www.example.com/image-url/image.jpg <span>image--&gt;</span></code></p>
+			<p>Postagem de vídeo do Youtube em destaque entre os 'video'<br><code class="p"><span>&lt;!--video</span> ´https://www.youtube.com/watch?v=xxxxxxx <span>video--&gt;</span></code></p>
+			<p>Postagem com áudio do SoundCloud em destaque entre os 'audio'<br><code class="p"><span>&lt;!--audio</span> ´https://soundcloud.com/xxxx/audio-url <span>audio--&gt;</span></code></p>
+			<p>Postagem de link em destaque entre os 'link'<br><code class="p"><span>&lt;!--link</span> https://linkdoartigodestacado.com.br <span>link--&gt;</span></code></p>
+			<p>Postagem de citação em destaque entre os 'quote'<br><code class="p"><span>&lt;!--quote</span> A citação é uma marca do dialogismo linguístico, feita para sustentar uma hipótese ...(Wikipedia) <span>quote--&gt;</span></code></p>
+
+			<p>Exemplo completo: <br><code class="p">
+&lt;!--t Título do artigo t--&gt;
+&lt;!--d Descrição do artigo (resumo) d--&gt;
+&lt;!--tag Tag1,Tag2 tag--&gt;
+&lt;!--video https://www.youtube.com/watch?v=xxxxxxx video--&gt;
+
+Introducao do artigo
+Desenvolvimento
+Conclusao.
+
+</code></p>
+			<h5><i class="fa fa-file-o"></i> Categoria</h5>
+			<p>Crie uma categoria, por exemplo, 'Informática' dentro de <code class="p">content/data/category/<span>informatica.md</span></code> com o conteúdo:</p>
+			<p><code class="p">&lt;!--t Informatica t--&gt;
+&lt;!--d Descrição dessa categoria d--&gt;
+
+Informação dessa categoria.</code></p>
+
+			<p>Para adicionar uma Postagem padrão de nome 'smartphones' na categoria 'Informatica' crie-o na seguinte estrutura: <code class="p">content/usuario/informatica/post/<span>smartphones.md</span></code> - 'post' é um dos tipos de postagem.</p><br>
+		</section>
+			
 		</section>
 
 	</main>

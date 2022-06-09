@@ -94,8 +94,8 @@ main section {background:aliceblue;margin:0;margin:1rem -1rem 1rem -1rem !import
 section.f h4 {padding:0.5rem;background-color:#fff;border-left:1rem solid #59c}
 section.f h5 {padding:0.2rem;font-size:small;border-bottom:0.1rem solid #59c;display:inline-block;margin:1rem}
 
-   /*div destaque*/
-   div.sec1 {padding:1rem;background-color:azure;margin:-1rem -1rem  0 -1rem;border:1px solid #49c;box-shadow:1px 1px 1px;margin-bottom:2rem} 
+/*div destaque*/
+div.sec1 {padding:1rem;background-color:azure;margin:-1rem -1rem  0 -1rem;border:1px solid #49c;box-shadow:1px 1px 1px;margin-bottom:2rem} 
 
 section ul#hist {list-style:none;padding:0}
 section ul#hist span.year {background-color:#C7E9FB;margin:0 -1rem;padding:1rem;font-weight:bold;font-size:1rem;display:block}
