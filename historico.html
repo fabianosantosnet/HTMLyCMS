@@ -70,7 +70,7 @@
 				<p>O <abbr title="Do inglês 'Content Management System' - traduzido como 'Sistema de Gerenciamento de Conteúdo'">CMS</abbr> utiliza um algoritmo exclusivo para encontrar ou listar qualquer conteúdo com base em data, categoria, tag ou autor, e o desempenho permanecerá rápido mesmo se tivermos milhares de postagens e centenas de tags. Além disso, por ser leve uma hospedagem com PHP compartilhada é o suficiente.</p>
 			</div>
 			
-			<p>Vejamos as principais atualizações desde o seu início:</p>
+			<p>Vejamos as principais atualizações desde o seu início: <sup><small>(versão em inglês pode ser visualizada <a href="https://github.com/danpros/htmly/releases">aqui</a>)</small></sup></p>
 			
 			<ul id="hist">
 				<li><span class="year">2014</span>
@@ -129,6 +129,7 @@
 					<ul>
 						<li>Janeiro - adicionado suporte ao PHP 8, tag de preenchimento automatico e correções de segurança.</li>
 						<li>Fevereiro - na última versão 2.7.7 foi incluido um editor de menu, analítico universal (gtags.js), atualização do painel de administração utilizando o template AdminLTE v3 construído em <a href="https://getbootstrap.com/">Bootstrap</a> e reorganização das páginas de configuração.</li>
+
 						<li>Março - script <code>install.php</code> incluído na versão 2.7.8, melhorado postagem, tags e a barra de ferramentas do editor; nas demais versões liberadas no mês: fixado bugs, suporte de paginação para index e páginas de perfis e tradução para português brasileiro incluída (exceto área de configuração).</li>
 						
 						<li>Abril - Tradução completa do CMS para o português (v2.8.0), tag de vídeo com alteração na chamada, correções de segurança e adição de variáveis para tema.</li> 
@@ -137,9 +138,57 @@
 				
 				<li><span class="year">2022</span>
 					<ul>
-						<li>Fevereiro - Atualizações de idioma; uso de categoria para o widget de postagens relacionadas em vez de tag para melhor desempenho e consistência; Limite no widget nuvem de tags e correção de segurança.</li>
+						<li>Fevereiro - v2.8.2 - Atualizações de idioma; uso de categoria para o widget de postagens relacionadas em vez de tag para melhor desempenho e consistência; Limite no widget nuvem de tags e correção de segurança.</li>
 					</ul>
 				</li>
+
+				<li><span class="year">2023</span>
+					<ul>
+						<li>Novembro - v2.8.3/2.8.4 - Melhora de compatibilidade com PHP 8.x; Uso do PHP Intl em vez de strftime para localizar o formato de data; Atualização de idiomas e outras pequenas melhorias. <strong>Depois de atualizar a versão não esqueça de ir nas configurações e alterar para o novo formato de data.</strong>. Novo recurso: postagens agendadas simples.</li>
+
+						<li>Dezembro - v2.8.5..v2.8.9 - Correção de codificação de caracteres; Correção de problema de redefinição de visualizações de postagens populares devido à alteração de uma tag de postagem, categoria, data ou slug; Melhoria no instalador online e offline e na tradução. Correção de renomeação da pasta categoria; Vários templates traduzidos; Adicionado <code>$post->lastMod</code> e <code>theme_path()</code>. Galeria de imagens simples: agora podemos reutilizar imagens carregadas anteriormente;
+Correção de bugs: As tags numéricas só podem ser aplicadas a uma postagem (por exemplo, 2023, 2024) e corrigido Nome de arquivo de cache muito longo porque <code>$_SERVER['REQUEST_URI']</code> sempre é codificado em url (por exemplo, URL com caracteres chineses) além de outras melhorias.</li>
+
+					</ul>
+				</li>
+
+				<li><span class="year">2024</span>
+					<ul>
+						<li>Janeiro - v2.9.0/2.9.1 - Rascunho para páginas e subpáginas; Adicionado sufixo "/feed" na URL da coleção de postagens (categoria, tag, tipo, pesquisa, arquivo, autor) que irá gerar a feed RSS; Renomeado função: <code>get_static_post</code> para <code>find_page</code> e <code>get_static_sub_post</code> para <code>find_subpage</code>; Navegação de página para 'página/subpágina'; 
+Suporte para URLs de vários sites; Suporte ao sublinhado no nome de usuário; Adicionada nova variável post usada em <code>post.html.php</code> e static usada em <code>static.html.php</code>. Mais fácil de gerenciar seu conteúdo localmente, veja no README.md. / Agora podemos reorganizar a ordem das páginas e subpáginas facilmente, basta arrastar e soltar; Novo tema Doks adicionado ao pacote. Inclusão automatica da <code>functions.php</code> se este arquivo existir na pasta do tema (evitar conflito?); Notas: Para o tema Doks - o menu superior é gerado a partir do editor de menus, e o menu da barra lateral é gerado automaticamente usando a função <code>get_menu</code>. Ao nomear a função no tema <code>functions.php</code>, use <code>themeName_functionName()</code>, para garantir que não entre em conflito com a função existente.</li>
+
+						<li>Fevereiro - v2.9.3 - Adicione <abbr title="Table of Contents/Tabela de Conteúdo">TOC</abbr> usando o código <code>&#x3C;!--toc--&#x3E;</code> que pode ser inserido manualmente usando o editor ou automaticamente. Altere seu comportamento em <em>admin/config/widget</em>. Novo logotipo e links de mídia social => Todos os temas foram atualizados para usar a função <code>social()</code> (adicionados Instagram, Linkedin, Github, Mastodon, TikTok e Youtube).</li>
+
+						<li>Março - v2.9.4/2.9.5/2.9.6 - Adição de paginação na galeria de imagens; Pequeno ajuste de desempenho; Atualizado alguns dos estilos dos temas e tradução para o alemão. Open Graph e Twitter card simplificado; Permite alterar os formatos de títulos meta usando shortcode. Visite admin/config/metatags; Opções de favicon e imagem padrão. Nota => Para metatags, há uma nova variável <code>echo $metatags;</code> e ela deve ser adicionada à tag HTML <code>head</code> em <code>layout.html.php</code> para gerar a metatag Open Graph e Twitter card. Além das mencionadas também O administrador pode adicionar, editar e excluir usuários usando o painel; Melhoria no gerenciamento das funções admin, editor e autor. </li>
+
+
+						<li>Abril - v2.9.7 - Correção de vulnerabilidades de travessia de diretório; Avatar para usuários; Suporte a upload de imagem WebP; Melhoria no editor de texto. Observação sobre imagem WebP => HTMLy usa <code>getimagesize</code> para verificar se a imagem é válida ou não. O getimagesize adicionou suporte a WebP no PHP 7.1.</li>
+
+						<li>Maio - v2.9.8 - Correções de bugs de exclusão em post/página/categoria; Não é possível reordenar página/subpágina; Corrigir estilo no tema Doks.</li>
+
+						<li>Junho - v2.9.9 - O requisito mínimo do PHP aumentou para 7.2; atualizações do Composer; recurso de autenticação multifator (MFA); recurso de salvamento automático; Cloudflare Turnstile; recurso de modo de foco; ocultar versão HTMLy. Observação para MFA: o QR Code durante a configuração do MFA é habilitado automaticamente se a versão do PHP for pelo menos 8.1.</li>
+
+
+						<li>Setembro - v3.0.0 - Novo <code>create_thumb($imgFile, $width, $height)</code> => Redimensiona a imagem para a largura e altura desejadas; Pode especificar o tamanho da imagem de saída de <code>get_image($string, $width, $height)</code>. Melhora a função <code>recent_type</code> => Obtém as últimas postagens por tipo de conteúdo, categoria, autor. Novo <code>recent_tag</code> => Obtém as postagens recentes por tag. Melhora o link canônico da página de índice; Permite alterar o caminho '/blog', por exemplo, para '/articles'; Permite alterar o prefixo do permalink da postagem. Anteriormente, suportava apenas '/ano/mês/url-do-post' e '/post/url-do-post'. Adição da capacidade de invocar o avatar do autor usando os arrays <code>$next</code> e <code>$prev</code>.</li>
+
+						<li>Outubro - v3.0.1 - Corrigido rascunho gerado duplicado pelo recurso de salvamento automático; Corrigido os links de categoria na página de administração; Movido mensagens de erro codificadas de htmly.php para arquivos de tradução; Permitir escolher o tipo de descrição RSS; Atualização do Font Awesome e URLs http para https no editor Markdown.Editor.js.</li>
+
+						<li>Novembro - v3.0.2 -Novo tema baseado no Tailwind; Tema de administração escuro e claro; Novo - Conta social Bluesky; Correções de bugs encontradas no núcleo e no tema.</li>
+
+					</ul>
+				</li>
+
+				<li><span class="year">2025</span>
+					<ul>
+						<li>Janeiro - v3.0.3 - Melhorias no salvamento automático; Uso de layout de grade para galerias; Atualizado <code>get_pagination()</code>; MFA limpo; Melhorias na pesquisa.</li>
+
+						<li>Fevereiro - v3.0.4 - Permitir escolher o modo de pesquisa => Pesquisa de texto completo (usando o Índice de Pesquisa) vs. Correspondência de arquivo (pesquisar a palavra apenas no slug e na tag); Garantir o mínimo de três caracteres para a pesquisa <code>$keyword</code>; Correção de bug ao reordenar as páginas estáticas.</li>
+
+						<li>Fevereiro - v3.0.5 - Correção de bug de redirecionamento de pesquisa.</li>
+
+					</ul>
+				</li>
+
 			</ul>
 
 		</section>
